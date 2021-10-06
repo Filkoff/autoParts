@@ -1,0 +1,95 @@
+[
+  {
+    "orderId": "23456",
+    "userId": "2765",
+    "name": "Борис",
+    "date": "10.09.2021",
+    "total": 47.9,
+    "address": "г. Минск, ул. Скорины, 20-34",
+    "paymentType": "Карта",
+    "phoneNumber": "+375-33-677-32-67",
+    "deliveryTime": "18:00-20:00",
+    "orders": [
+      {
+        "id": "9",
+        "category": "фильтры",
+        "name": "воздушный фильтр",
+        "description": "215х215х45мм",
+        "models": "granta, calina",
+        "img": "/assets/images/parts/airfilter.jpg",
+        "condition": "новая",
+        "price": 12,
+        "production": "Filtron",
+        "dealer": "Ben",
+        "amount": 1
+      },
+      {
+        "id": "10",
+        "category": "фильтры",
+        "name": "топливный фильтр",
+        "description": "с фильтром грубой очистки",
+        "models": "granta, calina",
+        "img": "/assets/images/parts/fuelp.jpg",
+        "condition": "новая",
+        "price": 35.9,
+        "production": "BluePrint",
+        "dealer": "Ben",
+        "amount": 1
+      }
+    ]
+  },
+
+  {
+    "orderId": "45657",
+    "userId": "5432",
+    "name": "Юрий",
+    "date": "11.09.2021",
+    "total": 35.9,
+    "address": "г. Минск, ул. Кошевого, 22-48",
+    "paymentType": "Наличные",
+    "phoneNumber": "+375-29-543-43-67",
+    "deliveryTime": "18:00-20:00",
+    "orders": [
+      {
+        "id": "6",
+        "category": "фильтры",
+        "name": "масляный фильтр",
+        "description": "Внутренний диаметр - 62мм",
+        "models": "granta, calina, vesta",
+        "img": "/assets/images/parts/oilfilter.jpg",
+        "condition": "новая",
+        "price": 35.9,
+        "production": "Patron",
+        "dealer": "Ben",
+        "amount": 1
+      }
+    ]
+  },
+
+  {
+    "orderId": "45678",
+    "userId": "2345",
+    "name": "Олег",
+    "date": "11.09.2021",
+    "total": 71.8,
+    "address": "г. Минск, ул. Октяьрьская, 2-354",
+    "paymentType": "Наличные",
+    "phoneNumber": "+375-29-234-28-40",
+    "deliveryTime": "18:00-20:00",
+    "orders": [
+      {
+        "id": "4",
+        "category": "подвеска",
+        "name": "задний рычаг",
+        "description": "Сторона утановки - задняя ось",
+        "models": "niva",
+        "img": "/assets/images/parts/rychag2.jpg",
+        "condition": "новая",
+        "price": 35.9,
+        "production": "Nakayama",
+        "dealer": "Ben",
+        "amount": 2
+      }
+    ]
+  }
+]

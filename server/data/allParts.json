@@ -1,0 +1,90 @@
+[
+  {
+    "id": "1",
+    "category": "подвеска",
+    "name": "пружина аммортизатора",
+    "description": "Сторона утановки - задняя ось, длина - 250 мм",
+    "models": "granta, calina",
+    "img": "/assets/images/parts/coils.jpg"
+  },
+  {
+    "id": "2",
+    "category": "выхлопная система",
+    "name": "катализатор",
+    "description": "Масса - 2кг, длина - 370 мм",
+    "models": "vesta",
+    "img": "/assets/images/parts/cat.jpg"
+  },
+  {
+    "id": "3",
+    "category": "подвеска",
+    "name": "передний рычаг",
+    "description": "Сторона утановки - справа",
+    "models": "granta",
+    "img": "/assets/images/parts/rychag.jpg"
+  },
+  {
+    "id": "4",
+    "category": "подвеска",
+    "name": "задний рычаг",
+    "description": "Сторона утановки - задняя ось",
+    "models": "niva",
+    "img": "/assets/images/parts/arm-r.jpg"
+  },
+  {
+    "id": "5",
+    "category": "система охлаждения",
+    "name": "крышка радиатора",
+    "description": "-",
+    "models": "calina, niva, granta",
+    "img": "/assets/images/parts/kryshka.jpg"
+  },
+  {
+    "id": "6",
+    "category": "фильтры",
+    "name": "масляный фильтр",
+    "description": "Внутренний диаметр - 62мм",
+    "models": "granta, calina, vesta",
+    "img": "/assets/images/parts/oilfilter.jpg"
+  },
+  {
+    "id": "7",
+    "category": "фильтры",
+    "name": "топливный фильтр",
+    "description": "Внутренний диаметр - 8мм",
+    "models": "granta, calina, niva, x-ray",
+    "img": "/assets/images/parts/fuelfilter.jpg"
+  },
+  {
+    "id": "8",
+    "category": "топливная система",
+    "name": "топливный насос",
+    "description": "объем - 130л",
+    "models": "granta, calina, 2109, x-ray",
+    "img": "/assets/images/parts/fuelpump.jpg"
+  },
+  {
+    "id": "9",
+    "category": "фильтры",
+    "name": "воздушный фильтр",
+    "description": "215х215х45мм",
+    "models": "granta, calina",
+    "img": "/assets/images/parts/airfilter.jpg"
+  },
+  {
+    "id": "10",
+    "category": "топливная система",
+    "name": "топливный насос",
+    "description": "с фильтром грубой очистки",
+    "models": "granta, calina",
+    "img": "/assets/images/parts/fuelp.jpg"
+  },
+  {
+    "id": "11",
+    "category": "тормозная система",
+    "name": "тормозной диск",
+    "description": "Сторона утановки - передний мост, диаметр - 237 мм",
+    "models": "granta, calina, vesta, niva",
+    "img": "/assets/images/parts/disk.jpg"
+  }
+]
