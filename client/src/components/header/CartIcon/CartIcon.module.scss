@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  position: relative;
+}
+.cartLabel {
+  background: #ff4c14;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7em;
+  position: absolute;
+  left: 25px;
+  bottom: 30px;
+}
+
+.itemsAmount {
+  position: relative;
+  bottom: 2px;
+}
+
+.icon {
+  color: #000000;
+}

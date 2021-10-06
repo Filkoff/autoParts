@@ -1,0 +1,33 @@
+.card {
+  border: 1px solid #4e4b4b;
+  border-radius: 5px;
+  width: 300px;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.button {
+  margin: 10px !important;
+}
+
+.img {
+  max-width: 200px;
+  max-height: 200px;
+}
+.info {
+  word-break: break-word;
+}
+.name {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media (max-width: 576px) {
+  .card {
+    max-width: 200px;
+    margin: 5px;
+  }
+}

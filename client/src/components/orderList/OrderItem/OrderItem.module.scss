@@ -1,0 +1,22 @@
+.image {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.order {
+  border: 1px solid rgb(148, 141, 141);
+  margin: 50px;
+  border-radius: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+.name {
+  text-transform: uppercase;
+  font-weight: 700;
+}

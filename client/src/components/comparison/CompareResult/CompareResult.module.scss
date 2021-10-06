@@ -1,0 +1,32 @@
+.compare {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.comparePart {
+  width: 300px;
+  margin: 30px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container {
+  max-width: 1200px;
+  padding: 100px 30px;
+  margin: 0 auto;
+}
+.partImage {
+  max-width: 200px;
+  max-height: 200px;
+  margin: 10px;
+}
+.button {
+  margin: 20px !important;
+}
+.name {
+  font-weight: 700;
+  text-transform: uppercase;
+}

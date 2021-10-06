@@ -1,0 +1,46 @@
+.container {
+  margin: 100px auto;
+}
+.form {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: -1px 8px 15px 0px rgba(0, 0, 0, 0.44);
+}
+.heading {
+  margin-bottom: 20px;
+}
+.label {
+  margin: 10px;
+  width: 50px;
+  height: 80px;
+  cursor: pointer;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+}
+.btnLoadInput {
+  display: none;
+}
+
+.input {
+  margin-bottom: 30px;
+}
+
+.image {
+  margin: 30px;
+  max-width: 200px;
+  max-width: 200px;
+}
+.button {
+  margin: 20px !important;
+}
+.info {
+  margin: 20px;
+  text-align: left;
+}
+.description {
+  width: 100%;
+  word-break: break-word;
+}

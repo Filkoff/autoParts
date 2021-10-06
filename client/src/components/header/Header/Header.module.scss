@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1200px;
+  margin: 0 auto;
+}
+.logo {
+  font-size: 1.3em;
+}
+
+.headerIconsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerIcon {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.headerButton {
+  margin: 15px 50px 15px 15px !important;
+  background-color: #fff;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.lang {
+  position: absolute;
+  right: 10px;
+}
+
+@media (max-width: 576px) {
+  .logo {
+    font-size: 0.9em;
+  }
+
+  .headerButton {
+    font-size: 0.7em;
+  }
+}

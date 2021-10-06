@@ -1,0 +1,61 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  position: fixed;
+  cursor: auto;
+}
+.background {
+  background-color: wheat;
+  width: 100%;
+}
+.popup {
+  position: absolute;
+  top: 60px;
+  right: 15%;
+  padding: 30px 20px 20px;
+  height: fit-content;
+  min-width: 400px;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgb(200, 200, 200);
+  margin: 10px;
+  min-height: 100px;
+  background-color: #fff;
+}
+
+.image {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 20px;
+}
+
+.dealer {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.info {
+  flex-basis: 300px;
+  font-weight: 600;
+}
+.infoBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+.name {
+  text-transform: uppercase;
+  font-weight: 700;
+}

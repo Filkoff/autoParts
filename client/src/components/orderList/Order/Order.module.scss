@@ -1,0 +1,21 @@
+.order {
+  border: 1px solid black;
+  margin: 50px;
+  border-radius: 10px;
+}
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  flex-grow: 2;
+}
+.orderBlock {
+  display: flex;
+  flex-wrap: wrap;
+}
+.mainInfo {
+  background-color: blanchedalmond;
+  border-radius: 10px;
+  padding: 20px;
+}
