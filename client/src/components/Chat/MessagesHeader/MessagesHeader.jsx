@@ -8,7 +8,7 @@ function MessagesHeader() {
     <div className={styles.person}>
       <img
         className={styles.avatar}
-        src="../../../../assets/images/avatar.jpg"
+        src="/assets/images/avatar.jpg"
         alt="avatar"
       />
       <h2>{current.name}</h2>

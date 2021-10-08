@@ -1,6 +1,7 @@
-.container {
+.iconContainer {
   display: flex;
   position: relative;
+  margin: 0 10px;
 }
 .cartLabel {
   background: #ff4c14;
@@ -24,4 +25,13 @@
 
 .icon {
   color: #000000;
+}
+@media (max-width: 576px) {
+  .iconContainer {
+    margin: 5px;
+  }
+  .cartLabel {
+    left: 18px;
+    bottom: 23px;
+  }
 }

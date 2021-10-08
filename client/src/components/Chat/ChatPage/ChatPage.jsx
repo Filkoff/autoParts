@@ -12,7 +12,7 @@ function ChatPage() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const chats = useSelector((state) => state.chat.chats);
-  const person = chats.find((item) => item.id === id);
+  const person = chats.find((item) => item.id == id);
   if (person) {
     dispatch(setCurrentPerson(person.id, person.person));
   }

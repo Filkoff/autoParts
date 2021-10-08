@@ -10,6 +10,10 @@
   background-color: wheat;
   width: 100%;
 }
+.popupContainer {
+  overflow-y: auto;
+  max-height: 500px;
+}
 .popup {
   position: absolute;
   top: 60px;

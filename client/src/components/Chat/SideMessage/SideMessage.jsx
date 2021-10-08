@@ -16,7 +16,7 @@ function SideMessage({ message }) {
         <div className={styles.avatarContainer}>
           <img
             className={styles.avatar}
-            src="../../../../assets/images/avatar.jpg"
+            src="/assets/images/avatar.jpg"
             alt="avatar"
           />
         </div>

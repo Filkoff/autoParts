@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './HeaderNav.module.scss';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import avatarLogo from '../../../assets/img/avatar.jpg';
 import { API_URL } from '../../../config';
@@ -14,6 +14,7 @@ import { clearCurrentPerson } from '../../../reducers/chatReducer';
 const HeaderNav = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const router = useHistory();
   const currentUser = useSelector((state) => state.user.currentUser);
 
   const avatar = currentUser.avatar
@@ -28,29 +29,40 @@ const HeaderNav = () => {
             <CartIcon />
           </div>
         ) : null}
-        <NavLink to="/chat">
-          <CommentIcon
-            fontSize="large"
-            className={styles.commentIcon}
-            onClick={() => dispatch(clearCurrentPerson())}
-          />
-        </NavLink>
-        <NavLink to="/profile/about">
-          <img
-            id="userAvatar"
-            className={styles.userAvatar}
-            src={avatar}
-            alt="avatar"
-          />
-        </NavLink>
-        <NavLink to="/main">
-          <Button
-            className={styles.headerButton}
-            onClick={() => dispatch(logout())}
-          >
-            {t('login.logOut')}
-          </Button>
-        </NavLink>
+
+        <div className={styles.iconContainer}>
+          <NavLink to="/chat">
+            {' '}
+            <CommentIcon
+              fontSize="large"
+              className={styles.commentIcon}
+              onClick={() => dispatch(clearCurrentPerson())}
+            />
+          </NavLink>
+        </div>
+
+        <div className={styles.iconContainer}>
+          <NavLink to="/profile/about">
+            <img
+              id="userAvatar"
+              className={styles.userAvatar}
+              src={avatar}
+              alt="avatar"
+            />
+          </NavLink>
+        </div>
+
+        <Button
+          size="small"
+          variant="outlined"
+          className={styles.headerButton}
+          onClick={() => {
+            dispatch(logout());
+            router.push('/main');
+          }}
+        >
+          {t('login.logOut')}
+        </Button>
       </div>
     </div>
   );

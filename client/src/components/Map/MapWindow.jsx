@@ -83,9 +83,9 @@ function MapWindow() {
   }, []);
 
   return (
-    <div>
+    <>
       <div id="map" style={{ maxWidth: '600px', height: '400px' }}></div>
-    </div>
+    </>
   );
 }
 

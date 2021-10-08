@@ -74,7 +74,7 @@ function CreditCardForm() {
                   onChange={handleChange}
                   onFocus={handleFocus}
                   inputProps={{
-                    maxlength: 5,
+                    maxLength: 5,
                   }}
                 />
               </FormGroup>

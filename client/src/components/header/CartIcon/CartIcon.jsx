@@ -12,7 +12,7 @@ function CartIcon() {
   const [show, setShow] = useState(false);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.iconContainer}>
       <Cart
         onClick={() => setShow(true)}
         className={styles.icon}

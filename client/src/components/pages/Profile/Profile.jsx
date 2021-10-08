@@ -170,16 +170,14 @@ function Profile(props) {
             {t('deleteAvatar')}
           </Button>
           <div className={styles.menu}>
-            <div>
-              <Button
-                className={styles.button}
-                variant="contained"
-                color="primary"
-                onClick={() => setShowModal(true)}
-              >
-                {t('myLocation')}
-              </Button>
-            </div>
+            <Button
+              className={styles.button}
+              variant="contained"
+              color="primary"
+              onClick={() => setShowModal(true)}
+            >
+              {t('myLocation')}
+            </Button>
           </div>
         </div>
         <div className={styles.userInfoContainer}>

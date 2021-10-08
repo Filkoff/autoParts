@@ -23,7 +23,7 @@ const Registration = () => {
   return (
     <div className={styles.container}>
       <img src="/assets/images/Lada.png" alt="logo" />
-      <div>
+      <>
         <Container maxWidth="xs">
           <DialogTitle id="form-dialog-title">{t('login.registr')}</DialogTitle>
           <DialogContent>
@@ -87,7 +87,7 @@ const Registration = () => {
             </Button>
           </NavLink>
         </Container>
-      </div>
+      </>
     </div>
   );
 };

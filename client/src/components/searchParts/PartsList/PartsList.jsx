@@ -72,7 +72,7 @@ export default function PartsList() {
         {' '}
         {t('sortByDist')}
       </Button>
-      <NavLink to="/">
+      <NavLink to="/main">
         <Button className={styles.button} variant="contained" color="primary">
           {t('closeButton')}
         </Button>

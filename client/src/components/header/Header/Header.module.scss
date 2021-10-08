@@ -41,10 +41,13 @@ a {
 
 @media (max-width: 576px) {
   .logo {
-    font-size: 0.9em;
+    font-size: 1em;
   }
 
   .headerButton {
     font-size: 0.7em;
+  }
+  .lang {
+    width: 25px;
   }
 }

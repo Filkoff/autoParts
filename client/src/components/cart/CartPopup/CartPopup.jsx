@@ -18,7 +18,7 @@ function CartPopup({ showPopup, setShowPopup }) {
         <div className={styles.popup} onClick={(e) => e.stopPropagation()}>
           <h2>{t('cart')}</h2>
           {items.length < 1 ? <p>{t('cartIsEmpty')}</p> : null}
-          <div>
+          <div className={styles.popupContainer}>
             {items.map((item) => {
               return (
                 <div key={item.id}>

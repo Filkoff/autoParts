@@ -61,7 +61,7 @@ function Search() {
   );
 
   const searchForm = (value) => (
-    <div>
+    <>
       <div className={styles.searchField}>
         <div className={styles.singleSearch}>
           <p className={styles.label}>{t('category')}:</p>
@@ -105,7 +105,7 @@ function Search() {
         {value === 0 && searchButton}
         {value === 1 && compareButton}
       </div>
-    </div>
+    </>
   );
   return (
     <div className={styles.wrapper}>

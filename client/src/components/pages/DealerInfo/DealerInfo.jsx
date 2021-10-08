@@ -45,7 +45,7 @@ function DealerInfo() {
       <h1>{t('dealerInfo')}</h1>
       <img
         className={styles.image}
-        src="../../../../assets/images/avatar.jpg"
+        src="/assets/images/avatar.jpg"
         alt="logo"
       />
       <p>

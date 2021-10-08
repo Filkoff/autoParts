@@ -13,7 +13,7 @@ function CartDealer({ dealer }) {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   return (
-    <div>
+    <>
       <div className={styles.dealer}>
         <h3 className={styles.dealerName}>
           {t('dealerParts')} {dealer}
@@ -37,7 +37,7 @@ function CartDealer({ dealer }) {
           </NavLink>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

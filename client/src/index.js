@@ -9,7 +9,17 @@ import './i18n';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div className="loader">
+          <div className="lds-facebook">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      }
+    >
       <App />
     </Suspense>
   </Provider>,

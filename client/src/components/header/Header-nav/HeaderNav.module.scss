@@ -12,11 +12,12 @@
   margin: 15px 40px 15px 15px !important;
   background-color: #fff;
 }
-
+.iconContainer {
+  margin: 0 10px;
+}
 .userAvatar {
   width: 40px;
   height: 40px;
-  margin-right: 20px;
   border-radius: 50%;
 }
 
@@ -25,14 +26,17 @@ a {
 }
 .commentIcon {
   color: #000000;
-  margin: 0 20px;
 }
 
-@media (max-width: 500px) {
-  .commentIcon {
+@media (max-width: 576px) {
+  .iconContainer {
     margin: 5px;
   }
   .userAvatar {
-    margin-right: 0px;
+    width: 30px;
+    height: 30px;
+  }
+  .headerButton {
+    margin-left: 5px !important;
   }
 }

@@ -10,7 +10,7 @@ function CartItem({ part }) {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   return (
-    <div>
+    <>
       <div className={styles.row}>
         <div className={styles.ceil}>
           <img className={styles.image} src={part.img} alt={part.name} />
@@ -55,7 +55,7 @@ function CartItem({ part }) {
           {t('delete')}
         </CloseIcon>
       </div>
-    </div>
+    </>
   );
 }
 
