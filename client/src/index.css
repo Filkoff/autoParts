@@ -22,7 +22,7 @@ code {
     font-size: 12px;
   }
 }
-.loader {
+/* .loader {
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -65,4 +65,4 @@ code {
     top: 24px;
     height: 32px;
   }
-}
+} */

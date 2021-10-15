@@ -1,9 +1,10 @@
-import { Button, Input, NativeSelect } from '@material-ui/core';
 import React, { useState } from 'react';
+import { Button, Input, NativeSelect } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import styles from './PartOption.module.scss';
+import PropTypes from 'prop-types';
+import styles from './PartOptions.module.scss';
 
 function PartOptions({ newId, setPart }) {
   const dispatch = useDispatch();
@@ -20,6 +21,22 @@ function PartOptions({ newId, setPart }) {
   const [production, setProduction] = useState(currentPart.production);
   const [img, setImg] = useState(currentPart.img);
   const { t } = useTranslation();
+
+  const changePartHandler = () => {
+    dispatch(
+      setPart(
+        newId || id,
+        category,
+        name,
+        description,
+        models,
+        img,
+        condition,
+        price,
+        production
+      )
+    );
+  };
 
   async function inputHandler(e) {
     const img = URL.createObjectURL(e.target.files[0]);
@@ -58,7 +75,7 @@ function PartOptions({ newId, setPart }) {
           <b>{t('partName')}:</b> {currentPart.name}
         </div>
         <div className={styles.info}>
-          <b>{t('description')}:</b>{' '}
+          <b>{t('description')}: </b>
           <Input
             className={styles.description}
             value={description}
@@ -70,18 +87,21 @@ function PartOptions({ newId, setPart }) {
           <b>{t('model')}:</b> {currentPart.models}
         </div>
         <div className={styles.info}>
-          <b>{t('condition')}:</b>{' '}
+          <b>{t('condition')}: </b>
           <NativeSelect onChange={(e) => setCondition(e.target.value)}>
             <option value={'новая'}>{t('new')}</option>
             <option value={'б/у'}>{t('used')}</option>
           </NativeSelect>
         </div>
         <div className={styles.info}>
-          <b>{t('price')}:</b>{' '}
-          <Input value={price} onChange={(e) => setPrice(e.target.value)} />
+          <b>{t('price')}: </b>
+          <Input
+            value={price}
+            onChange={(e) => setPrice(Number(e.target.value))}
+          />
         </div>
         <div className={styles.info}>
-          <b>{t('production')}:</b>{' '}
+          <b>{t('production')}: </b>
           <Input
             value={production}
             onChange={(e) => setProduction(e.target.value)}
@@ -92,21 +112,7 @@ function PartOptions({ newId, setPart }) {
             className={styles.button}
             variant="contained"
             color="primary"
-            onClick={() => {
-              dispatch(
-                setPart(
-                  newId || id,
-                  category,
-                  name,
-                  description,
-                  models,
-                  img,
-                  condition,
-                  price,
-                  production
-                )
-              );
-            }}
+            onClick={changePartHandler}
           >
             {t('save')}
           </Button>
@@ -115,5 +121,10 @@ function PartOptions({ newId, setPart }) {
     </div>
   );
 }
+
+PartOptions.propTypes = {
+  newId: PropTypes.string,
+  setPart: PropTypes.func,
+};
 
 export default PartOptions;

@@ -2,11 +2,12 @@ import React from 'react';
 import OrderItem from '../OrderItem/OrderItem';
 import styles from './Order.module.scss';
 import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 
 function Order({ order, children }) {
   const { t } = useTranslation();
   return (
-    <div key={order.orderId} className={styles.order}>
+    <div className={styles.order}>
       <div className={styles.orderBlock}>
         <div className={styles.mainInfo}>
           <h3>
@@ -20,7 +21,8 @@ function Order({ order, children }) {
           {children}
           <p>
             <b>
-              {t('total')}: {order.total}р.
+              {t('total')}: {order.total}
+              {t('currency')}
             </b>
           </p>
         </div>
@@ -33,5 +35,17 @@ function Order({ order, children }) {
     </div>
   );
 }
+
+Order.propTypes = {
+  order: PropTypes.shape({
+    orderId: PropTypes.string,
+    date: PropTypes.string,
+    address: PropTypes.string,
+    paymentType: PropTypes.string,
+    total: PropTypes.number,
+    orders: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string })),
+  }),
+  children: PropTypes.arrayOf(PropTypes.element),
+};
 
 export default Order;

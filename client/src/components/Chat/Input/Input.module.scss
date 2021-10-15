@@ -1,14 +1,21 @@
-.inputContainer {
+.container {
   margin: 40px;
 }
 .input {
   background-color: #ffffff;
   border-radius: 5px;
   width: 100%;
+  height: 100%;
 }
 .button {
-  height: 43px;
+  height: 42px;
 }
-.inputR {
+.inputContainer {
   display: flex;
+  align-items: stretch;
+}
+@media (max-width: 576px) {
+  .button {
+    height: 37px;
+  }
 }

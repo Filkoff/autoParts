@@ -1,1 +1,1 @@
-module.exports = { staticPath: __dirname + "\\..\\static" };
+module.exports = { staticPath: __dirname + '\\..\\static' };

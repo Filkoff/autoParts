@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from './Modal.module.scss';
+import PropTypes from 'prop-types';
+import styles from './ModalWindow.module.scss';
 
-function Modal({ show, setShow, children }) {
+function ModalWindow({ show, setShow, children }) {
   return (
     <div
       className={show ? `${styles.modal} ${styles.active}` : styles.modal}
@@ -17,4 +18,10 @@ function Modal({ show, setShow, children }) {
   );
 }
 
-export default Modal;
+ModalWindow.propTypes = {
+  show: PropTypes.bool,
+  setShow: PropTypes.func,
+  children: PropTypes.node,
+};
+
+export default ModalWindow;

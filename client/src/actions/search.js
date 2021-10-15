@@ -1,20 +1,18 @@
 import axios from 'axios';
 import { setResult, setSortedResult } from '../reducers/searchReducer';
+import { BASE_URL } from '../consts/baseURL';
 
 export const searchParts = (category = '', model = '', name = '') => {
   return async (dispatch) => {
     try {
-      const response = await axios.post(
-        'http://localhost:8080/api/dealers/parts/all',
-        {
-          category,
-          model,
-          name,
-        }
-      );
+      const response = await axios.post(BASE_URL + 'dealers/parts/all', {
+        category,
+        model,
+        name,
+      });
       dispatch(setResult(response.data));
     } catch (e) {
-      console.log(e.message);
+      console.error(e.message);
     }
   };
 };
@@ -22,7 +20,7 @@ export const searchPartsByDistance = (category, model, name, coordinates) => {
   return async (dispatch) => {
     try {
       const response = await axios.post(
-        'http://localhost:8080/api/dealers/parts/all/byDistance',
+        BASE_URL + 'dealers/parts/all/byDistance',
         {
           category,
           model,
@@ -30,10 +28,9 @@ export const searchPartsByDistance = (category, model, name, coordinates) => {
           coordinates,
         }
       );
-      console.log(response.data);
       dispatch(setSortedResult(response.data));
     } catch (e) {
-      console.log(e.message);
+      console.error(e.message);
     }
   };
 };

@@ -14,7 +14,7 @@ const MainPage = () => {
       <Header />
       <div className={styles.block}>
         <div>
-          <h1 className={styles.heading}>{t('mainHeader')}</h1>
+          <h2 className={styles.heading}>{t('mainHeader')}</h2>
         </div>
         <div>
           <img
@@ -31,11 +31,13 @@ const MainPage = () => {
           <div className={styles.text}>
             <p>{t('mainText1')}</p>
             <p>{t('mainText2')}</p>
+
             <img
               src="/assets/images/2101.jpg"
               alt="auto"
               className={styles.textImage}
             />
+
             <p>{t('mainText3')}</p>
           </div>
         </div>

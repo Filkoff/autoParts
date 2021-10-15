@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Header from './components/header/Header/Header';
 import styles from './App.module.scss';
@@ -29,7 +29,7 @@ function App() {
         <BrowserRouter>
           <div className={styles.app}>
             <Header />
-            <>
+            <div className={styles.mainContent}>
               {isAuth ? (
                 <Switch>
                   {privateRoutes.map((route) => (
@@ -40,20 +40,25 @@ function App() {
                       exact={route.exact}
                     />
                   ))}
+                  <Redirect to="/main" />
                 </Switch>
-              ) : null}
+              ) : (
+                <Redirect to="/login" />
+              )}
 
-              <Switch>
-                {publicRoutes.map((route) => (
-                  <Route
-                    key={route.path}
-                    component={route.component}
-                    path={route.path}
-                    exact={route.exact}
-                  />
-                ))}
-              </Switch>
-            </>
+              {
+                <Switch>
+                  {publicRoutes.map((route) => (
+                    <Route
+                      key={route.path}
+                      component={route.component}
+                      path={route.path}
+                      exact={route.exact}
+                    />
+                  ))}
+                </Switch>
+              }
+            </div>
           </div>
         </BrowserRouter>
       </ThemeProvider>

@@ -8,6 +8,9 @@
   "search": {
     "placeholder": "введите номер артикула"
   },
+  "map": {
+    "search": "Поиск..."
+  },
   "mainHeader": "Автозапчасти вовремя!",
   "mainSearch": "Поиск запчастей",
   "searchButton": "Поиск",
@@ -89,5 +92,31 @@
   "myParts": "Мои запчасти",
   "choosePhoto": "Выбрать фото",
   "changePhoto": "Изменить фото",
-  "product": "Товар"
+  "product": "Товар",
+  "currency": "р",
+  "support": "Служба поддержки",
+  "paymentType": "Выберите способ оплаты",
+  "registrationRequest": "Чтобы продолжить, войдите в аккаунт или зарегистрируйтесь",
+  "pageNotFound": "Страница не найдена",
+  "urlError": "Запрашиваемый вами адрес не сущесвует",
+  "enterPassword": "Введите пароль",
+  "yourEmail": "Ваш email",
+  "password": "Пароль",
+  "nameLogin": "Имя/логин",
+  "emptyFieldError": "Поле не может быть пустым",
+  "invalidEmail": "Некорректный email",
+  "unknownError": "Неизвестная ошибка. Попробуйте позже",
+  "emptyCVC": "CVC не заполнен",
+  "CVCError": "Недействительный CVC",
+  "emptyExp": "Cрок действия карты не заполнен",
+  "expError": "Недействительный срок действия карты",
+  "emptyCardNumber": "Номер карты не заполнен",
+  "cardNumberError": "Недействительный номер карты",
+  "emptyCardName": "Имя не заполнено",
+  "cardNameError": "Неверное имя",
+  "cardholder": "Имя держателя карты",
+  "cardNumber": "Номер карты",
+  "cardExpiration": "Срок действия карты",
+  "securityCode": "Код проверки подлинности",
+  "km": "км"
 }

@@ -1,13 +1,14 @@
-import { Button, FormGroup, TextField } from '@material-ui/core';
 import React from 'react';
+import { Button, FormGroup, TextField } from '@material-ui/core';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import { useTranslation } from 'react-i18next';
-import useForm from '../../utils/useForm';
+import useCreditCardForm from '../../utils/useCreditCardForm';
 import styles from './CreditCardForm.module.scss';
 
 function CreditCardForm() {
-  const { handleChange, handleFocus, handleSubmit, values, errors } = useForm();
+  const { handleChange, handleFocus, handleSubmit, values, errors } =
+    useCreditCardForm();
   const { t } = useTranslation();
   return (
     <div className={styles.container}>
@@ -27,9 +28,9 @@ function CreditCardForm() {
             <div className={styles.inputs}>
               <FormGroup className={styles.input}>
                 <TextField
-                  error={errors.message ? errors.message.name : null}
+                  error={errors.message ? Boolean(errors.message.name) : false}
                   helperText={errors.message ? errors.message.name : null}
-                  label="Cardholder Name"
+                  label={t('cardholder')}
                   variant="outlined"
                   type="text"
                   id="cardName"
@@ -42,14 +43,16 @@ function CreditCardForm() {
               </FormGroup>
               <FormGroup className={styles.input}>
                 <TextField
-                  error={errors.message ? errors.message.number : null}
+                  error={
+                    errors.message ? Boolean(errors.message.number) : false
+                  }
                   helperText={errors.message ? errors.message.number : null}
                   variant="outlined"
                   type="number"
                   id="cardNumber"
                   data-testid="cardNumber"
                   name="cardNumber"
-                  label="Card Number"
+                  label={t('cardNumber')}
                   value={values.cardNumber}
                   onChange={handleChange}
                   onFocus={handleFocus}
@@ -62,14 +65,14 @@ function CreditCardForm() {
               </FormGroup>
               <FormGroup className={styles.input}>
                 <TextField
-                  error={errors.message ? errors.message.exp : null}
+                  error={errors.message ? Boolean(errors.message.exp) : false}
                   helperText={errors.message ? errors.message.exp : null}
                   variant="outlined"
                   type="text"
                   id="cardExpiration"
                   data-testid="cardExpiration"
                   name="cardExpiration"
-                  label="Expiration Date"
+                  label={t('cardExpiration')}
                   value={values.cardExpiration}
                   onChange={handleChange}
                   onFocus={handleFocus}
@@ -80,14 +83,14 @@ function CreditCardForm() {
               </FormGroup>
               <FormGroup className={styles.input}>
                 <TextField
-                  error={errors.message ? errors.message.cvv : null}
+                  error={errors.message ? Boolean(errors.message.cvv) : false}
                   helperText={errors.message ? errors.message.cvv : null}
                   variant="outlined"
                   type="number"
                   id="cardSecurityCode"
                   data-testid="cardSecurityCode"
                   name="cardSecurityCode"
-                  label="Security Code"
+                  label={t('securityCode')}
                   value={values.cardSecurityCode}
                   onChange={handleChange}
                   onFocus={handleFocus}
@@ -99,7 +102,12 @@ function CreditCardForm() {
                 />
               </FormGroup>
             </div>
-            <Button variant="contained" color="primary" type="submit">
+            <Button
+              id="makeOrderButton"
+              variant="contained"
+              color="primary"
+              type="submit"
+            >
               {t('makeOrder')}
             </Button>
           </form>

@@ -9,9 +9,10 @@ import {
   InputLabel,
 } from '@material-ui/core';
 import { registration } from '../../../actions/user';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import styles from './Registration.module.scss';
 import { useTranslation } from 'react-i18next';
+import useValidation from '../../../utils/useValidation';
 
 const Registration = () => {
   const [email, setEmail] = useState('');
@@ -19,6 +20,19 @@ const Registration = () => {
   const [type, setType] = useState('customer');
   const [name, setName] = useState('');
   const { t } = useTranslation();
+  const [isEmailCorrect, errorText] = useValidation(email);
+  const [isInputChanged, setIsInputChanged] = useState(false);
+  const router = useHistory();
+  const handleBlur = () => {
+    setIsInputChanged(true);
+  };
+
+  const registrationHandler = () => {
+    if (isEmailCorrect) {
+      router.push('/main');
+      registration(name, email, password, type);
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -32,27 +46,30 @@ const Registration = () => {
               autoFocus
               margin="dense"
               id="name"
-              label="Имя/логин"
+              label={t('nameLogin')}
               type="text"
               fullWidth
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
             <TextField
+              error={!isEmailCorrect && isInputChanged ? !isEmailCorrect : null}
+              helperText={!isEmailCorrect && isInputChanged ? errorText : ''}
               required
               margin="dense"
               id="email"
-              label="Ваш email"
+              label={t('yourEmail')}
               type="email"
               fullWidth
               value={email}
+              onBlur={handleBlur}
               onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
               required
               margin="dense"
               id="password"
-              label="Пароль"
+              label={t('password')}
               type="password"
               fullWidth
               value={password}
@@ -66,17 +83,17 @@ const Registration = () => {
               </NativeSelect>
             </div>
           </DialogContent>
-          <NavLink to={'/main'}>
-            <Button
-              id="registrationButton"
-              className={styles.button}
-              onClick={() => registration(name, email, password, type)}
-              variant="contained"
-              color="primary"
-            >
-              {t('register')}
-            </Button>
-          </NavLink>
+
+          <Button
+            id="registrationButton"
+            className={styles.button}
+            onClick={registrationHandler}
+            variant="contained"
+            color="primary"
+          >
+            {t('register')}
+          </Button>
+
           <NavLink to={'/'}>
             <Button
               className={styles.button}

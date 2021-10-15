@@ -63,3 +63,13 @@
   text-transform: uppercase;
   font-weight: 700;
 }
+@media (max-width: 576px) {
+  .popup {
+    min-width: 200px;
+    padding: 5px;
+  }
+  .image {
+    max-width: 60px;
+    max-height: 60px;
+  }
+}

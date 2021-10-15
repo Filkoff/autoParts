@@ -3,7 +3,7 @@
     "orderId": "34456",
     "userId": "2321",
     "date": "10.09.2021",
-    "total": "158.0",
+    "total": 158.0,
     "address": "г. Минск, ул. Кошевого, 28-45",
     "paymentType": "Наличные",
     "deliveryTime": "18:00-20:00",
@@ -20,7 +20,7 @@
         "price": 45,
         "production": "Stellox",
         "dealer": "Bob",
-        "amount": "2"
+        "amount": 2
       },
       {
         "id": "12",
@@ -33,7 +33,7 @@
         "price": 35,
         "production": "Patron",
         "dealer": "Paul",
-        "amount": "2"
+        "amount": 2
       },
       {
         "id": "13",
@@ -46,7 +46,7 @@
         "price": 78,
         "production": "Nakayama",
         "dealer": "Ben",
-        "amount": "1"
+        "amount": 2
       }
     ]
   },
@@ -55,7 +55,7 @@
     "orderId": "35678",
     "userId": "22",
     "date": "14.09.2021",
-    "total": "22.5",
+    "total": 22.5,
     "address": "г. Минск, ул. Кошевого, 28-45",
     "paymentType": "Наличные",
     "phoneNumber": "+375-33-677-32-67",
@@ -71,7 +71,7 @@
         "price": 10.5,
         "production": "Blueprint",
         "dealer": "Nick",
-        "amount": "1"
+        "amount": 2
       },
       {
         "id": "18",
@@ -84,7 +84,7 @@
         "price": 12,
         "production": "Filtron",
         "dealer": "Rob",
-        "amount": "1"
+        "amount": 2
       }
     ]
   }

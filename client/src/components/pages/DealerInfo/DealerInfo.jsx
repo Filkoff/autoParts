@@ -5,11 +5,11 @@ import { setCurrentPerson } from '../../../reducers/chatReducer';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './DealerInfo.module.scss';
 import { useTranslation } from 'react-i18next';
-import Modal from '../../Modal/Modal';
+import Modal from '../../Modal/ModalWindow';
 
 function DealerInfo() {
   const currentDealer = useSelector((state) => state.dealer.choosenDealer);
-  const [show, setShow] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const isAuth = useSelector((state) => state.user.isAuth);
@@ -34,7 +34,7 @@ function DealerInfo() {
       className={styles.button}
       variant="contained"
       color="primary"
-      onClick={() => setShow(true)}
+      onClick={() => setIsVisible(true)}
     >
       {t('contact')}
     </Button>
@@ -55,10 +55,8 @@ function DealerInfo() {
         {t('address')}: {currentDealer.address}
       </p>
       {isAuth ? nextButton : registerButton}
-      <Modal show={show} setShow={setShow}>
-        <h3 className={styles.header}>
-          Чтобы продолжить, войдите в аккаунт или зарегистрируйтесь
-        </h3>
+      <Modal show={isVisible} setShow={setIsVisible}>
+        <h3 className={styles.header}>{t('registrationRequest')}</h3>
         <NavLink to="/login">
           <Button
             className={styles.button}

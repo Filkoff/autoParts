@@ -1,9 +1,10 @@
 import valid from 'card-validator';
+import i18next from 'i18next';
 
 export default function validateInfo(values) {
   const errors = {
     message: {
-      default: 'Неизвестная ошибка. Попробуйте позже',
+      default: i18next.t('unknownError'),
       cvv: '',
       name: '',
       exp: '',
@@ -18,7 +19,7 @@ export default function validateInfo(values) {
 
   errors.valid = false;
   errors.message = {
-    default: 'Неизвестная ошибка. Попробуйте позже',
+    default: i18next.t('unknownError'),
     cvv: '',
     name: '',
     exp: '',
@@ -30,40 +31,39 @@ export default function validateInfo(values) {
   errors.ccvv = false;
 
   if (values.cardSecurityCode === null || !values.cardSecurityCode.trim()) {
-    errors.message.cvv = 'CVC не заполнен';
+    errors.message.cvv = i18next.t('emptyCVC');
   } else if (creditCard.cvv.isValid) {
     errors.ccvv = true;
   } else {
-    errors.message.cvv = 'Недействительный CVC';
+    errors.message.cvv = i18next.t('CVCError');
   }
 
   if (values.cardExpiration === null || !values.cardExpiration.trim()) {
-    errors.message.exp = 'Cрок действия карты не заполнен';
+    errors.message.exp = i18next.t('emptyExp');
   } else if (creditCard.expirationDate.isValid) {
     errors.cexp = true;
   } else {
-    errors.message.exp = 'Недействительный срок действия карты';
+    errors.message.exp = i18next.t('expError');
   }
 
   if (values.cardNumber === null || !values.cardNumber.trim()) {
-    errors.message.number = 'Номер карты не заполнен';
+    errors.message.number = i18next.t('emptyCardNumber');
   } else if (creditCard.isValid) {
     errors.cnumber = true;
   } else {
-    errors.message.number = 'Недействительный номер карты';
+    errors.message.number = i18next.t('cardNumberError');
   }
 
   if (values.cardName === null || !values.cardName.trim()) {
-    errors.message.name = 'Имя не заполнено';
+    errors.message.name = i18next.t('emptyCardName');
   } else if (creditCard.cardholderName.isValid) {
     errors.cname = true;
   } else {
-    errors.message.name = 'Неверное имя';
+    errors.message.name = i18next.t('cardNameError');
   }
 
   if (errors.cname && errors.cnumber && errors.cexp && errors.ccvv) {
     errors.valid = true;
-    errors.message.all = 'Карта действительна';
   }
 
   return errors;

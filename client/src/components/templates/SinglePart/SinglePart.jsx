@@ -1,8 +1,8 @@
-import { Button } from '@material-ui/core';
 import React from 'react';
+import { Button } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
+import PropTypes from 'prop-types';
 import styles from './SinglePart.module.scss';
 
 export default function SinglePart({
@@ -15,7 +15,7 @@ export default function SinglePart({
   const { t } = useTranslation();
   return (
     <div className={styles.card}>
-      <div className={styles.content}>
+      <div>
         <p className={styles.name}>{name}</p>
         <p>
           {t('category')}: {category}
@@ -33,3 +33,11 @@ export default function SinglePart({
     </div>
   );
 }
+
+SinglePart.propTypes = {
+  id: PropTypes.string,
+  category: PropTypes.string,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  models: PropTypes.string,
+};

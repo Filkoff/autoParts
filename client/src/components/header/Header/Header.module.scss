@@ -11,6 +11,7 @@
 }
 .logo {
   font-size: 1.3em;
+  color: #000;
 }
 
 .headerIconsContainer {
@@ -24,13 +25,12 @@
   cursor: pointer;
 }
 
-.headerButton {
-  margin: 15px 50px 15px 15px !important;
-  background-color: #fff;
+button.headerButton {
+  margin: 15px 50px 15px 15px;
 }
 
 a {
-  color: #fff;
+  color: #000;
   text-decoration: none;
 }
 

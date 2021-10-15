@@ -1,13 +1,14 @@
 import axios from 'axios';
+import { BASE_URL } from '../consts/baseURL';
 
 export const getComparedParts = async (category, name, models) => {
   try {
-    await axios.post('http://localhost:8080/api/dealers/parts/compare', {
+    await axios.post(BASE_URL + 'dealers/parts/compare', {
       category,
       name,
       models,
     });
   } catch (e) {
-    console.log(e.message);
+    console.error(e.message);
   }
 };

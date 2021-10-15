@@ -1,9 +1,4 @@
-const bcrypt = require("bcryptjs");
-const { validationResult } = require("express-validator");
-const User = require("../models").User;
-const jwt = require("jsonwebtoken");
-const keys = require("../config/keys");
-const errorHandler = require("../utils/errorHandler");
+const User = require('../models').User;
 
 module.exports = {
   async changeName(req, res) {
@@ -44,7 +39,7 @@ module.exports = {
 
   async setAddress(req, res) {
     try {
-      res.status(200).send("Address was added");
+      res.status(200).send('Address was added');
     } catch (error) {
       console.log(error);
     }

@@ -20,13 +20,7 @@ const Header = () => {
         <Toolbar>
           <div className={styles.mainContainer}>
             <NavLink to={'/main'}>
-              <div
-                className={styles.logo}
-                style={{ color: '#000' }}
-                variant="h6"
-              >
-                {t('title')}
-              </div>
+              <div className={styles.logo}>{t('title')}</div>
             </NavLink>
 
             {!isAuth && (

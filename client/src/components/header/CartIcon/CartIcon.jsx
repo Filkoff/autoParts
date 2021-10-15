@@ -9,19 +9,20 @@ function CartIcon() {
   const amount = parts.reduce((acc, cur) => {
     return acc + cur.amount;
   }, 0);
-  const [show, setShow] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   return (
     <div className={styles.iconContainer}>
       <Cart
-        onClick={() => setShow(true)}
+        id="cartIcon"
+        onClick={() => setIsVisible(true)}
         className={styles.icon}
         fontSize="large"
       />
       <div className={styles.cartLabel}>
         <div className={styles.itemsAmount}>{amount}</div>
       </div>
-      <CartPopup showPopup={show} setShowPopup={setShow} />
+      <CartPopup showPopup={isVisible} setShowPopup={setIsVisible} />
     </div>
   );
 }

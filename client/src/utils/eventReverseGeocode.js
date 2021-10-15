@@ -1,7 +1,9 @@
 /* global ymaps */
+import i18next from 'i18next';
+
 ymaps.ready(init);
 function init() {
-  var myPlacemark,
+  let myPlacemark,
     myMap = new ymaps.Map(
       'map',
       {
@@ -14,7 +16,7 @@ function init() {
     );
 
   myMap.events.add('click', function (e) {
-    var coords = e.get('coords');
+    let coords = e.get('coords');
 
     if (myPlacemark) {
       myPlacemark.geometry.setCoordinates(coords);
@@ -32,7 +34,7 @@ function init() {
     return new ymaps.Placemark(
       coords,
       {
-        iconCaption: 'поиск...',
+        iconCaption: i18next.t('map.search'),
       },
       {
         preset: 'islands#violetDotIconWithCaption',
@@ -42,9 +44,9 @@ function init() {
   }
 
   function getAddress(coords) {
-    myPlacemark.properties.set('iconCaption', 'поиск...');
+    myPlacemark.properties.set('iconCaption', i18next.t('map.search'));
     ymaps.geocode(coords).then(function (res) {
-      var firstGeoObject = res.geoObjects.get(0);
+      let firstGeoObject = res.geoObjects.get(0);
       myPlacemark.properties.set({
         iconCaption: [
           firstGeoObject.getLocalities().length

@@ -8,6 +8,9 @@
   "search": {
     "placeholder": "input article number"
   },
+  "map": {
+    "search": "Search..."
+  },
   "mainHeader": "Auto parts just in time!",
   "mainSearch": "Auto parts search",
   "searchButton": "Search",
@@ -88,5 +91,31 @@
   "myParts": "My parts",
   "choosePhoto": "Choose a photo",
   "changePhoto": "Change photo",
-  "product": "Product"
+  "product": "Product",
+  "currency": "BYN",
+  "support": "Support",
+  "paymentType": "Select a Payment Method",
+  "registrationRequest": "To continue, please login or register",
+  "pageNotFound": "Page not found",
+  "urlError": "The requested URL does not exist",
+  "enterPassword": "Enter password",
+  "yourEmail": "Your email",
+  "password": "Password",
+  "nameLogin": "Name/login",
+  "emptyFieldError": "This field can not be empty",
+  "invalidEmail": "Invalid email",
+  "unknownError": "Unknown error. Try later",
+  "emptyCVC": "CVC is empty",
+  "CVCError": "Invalid CVC",
+  "emptyExp": "Expiration date is empty",
+  "expError": "Expiration date is invalid",
+  "emptyCardNumber": "Card number is empty",
+  "cardNumberError": "Card number is invalid",
+  "emptyCardName": "Name is empty",
+  "cardNameError": "Name is invalid",
+  "cardholder": "Cardholder name",
+  "cardNumber": "Card number",
+  "cardExpiration": "Expiration date",
+  "securityCode": "Security code",
+  "km": "km"
 }

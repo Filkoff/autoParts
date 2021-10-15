@@ -8,9 +8,8 @@
   cursor: pointer;
 }
 
-.headerButton {
-  margin: 15px 40px 15px 15px !important;
-  background-color: #fff;
+button.headerButton {
+  margin: 15px 40px 15px 15px;
 }
 .iconContainer {
   margin: 0 10px;
@@ -36,7 +35,7 @@ a {
     width: 30px;
     height: 30px;
   }
-  .headerButton {
-    margin-left: 5px !important;
+  button.headerButton {
+    margin-left: 5px;
   }
 }

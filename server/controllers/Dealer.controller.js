@@ -1,10 +1,10 @@
-const fs = require("fs");
+const fs = require('fs');
 
 module.exports = {
   async getAllDealerParts(req, res) {
     fs.readFile(
-      __dirname + "/../data/dealerParts.json",
-      "utf8",
+      __dirname + '/../data/dealerParts.json',
+      'utf8',
       (err, jsonString) => {
         if (err) {
           res.status(404);
@@ -24,7 +24,7 @@ module.exports = {
 
   async deleteDealerPart(req, res) {
     try {
-      res.status(200).send({ message: "part was deleted" });
+      res.status(200).send({ message: 'part was deleted' });
     } catch (err) {
       console.log(err);
       res.status(404);
@@ -33,7 +33,7 @@ module.exports = {
 
   async changeDealerPart(req, res) {
     try {
-      res.status(200).send({ message: "part was updated" });
+      res.status(200).send({ message: 'part was updated' });
     } catch (err) {
       console.log(err);
       res.status(404);
@@ -42,7 +42,7 @@ module.exports = {
 
   async addNewPart(req, res) {
     try {
-      res.status(200).send({ message: "part was added" });
+      res.status(200).send({ message: 'part was added' });
     } catch (err) {
       console.log(err);
       res.status(404);
@@ -51,8 +51,8 @@ module.exports = {
 
   async getDealerOrders(req, res) {
     fs.readFile(
-      __dirname + "/../data/dealerOrders.json",
-      "utf8",
+      __dirname + '/../data/dealerOrders.json',
+      'utf8',
       (err, jsonString) => {
         if (err) {
           res.status(404);

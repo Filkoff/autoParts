@@ -1,5 +1,5 @@
-import { Button } from '@material-ui/core';
 import React, { useState } from 'react';
+import { Button } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -10,7 +10,7 @@ import { setSortedResult } from '../../../reducers/searchReducer';
 
 export default function PartsList() {
   const dispatch = useDispatch();
-  const [sorted, setSorted] = useState(false);
+  const [isSorted, setIsSorted] = useState(false);
   let searchResult = useSelector((state) => state.search.result);
   let sortedResult = useSelector((state) => state.search.sortedResult);
   const { t } = useTranslation();
@@ -46,9 +46,9 @@ export default function PartsList() {
       {sortedResult.map((item) => {
         return (
           <Part key={item.id} {...item}>
-            {' '}
             <p>
-              {t('distance')}: {(item.distance / 1000).toFixed(2)}км
+              {t('distance')}: {(item.distance / 1000).toFixed(2)}
+              {t('km')}
             </p>
           </Part>
         );
@@ -58,18 +58,17 @@ export default function PartsList() {
 
   return (
     <section className={styles.container}>
-      <h2 className={styles.heading}>{t('searchResults')}</h2>
+      <h2>{t('searchResults')}</h2>
       <Button
         id="sortByDistButton"
         className={styles.button}
-        color={sorted ? 'primary' : 'default'}
+        color={isSorted ? 'primary' : 'default'}
         variant="contained"
         onClick={() => {
           sortSearch();
-          setSorted(!sorted);
+          setIsSorted(!isSorted);
         }}
       >
-        {' '}
         {t('sortByDist')}
       </Button>
       <NavLink to="/main">
@@ -77,7 +76,7 @@ export default function PartsList() {
           {t('closeButton')}
         </Button>
       </NavLink>
-      {!sorted ? parts : sortedParts}
+      {!isSorted ? parts : sortedParts}
     </section>
   );
 }

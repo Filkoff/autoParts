@@ -1,10 +1,8 @@
-"use strict";
-const { Model } = require("sequelize");
+'use strict';
 
-const sequelize = require("sequelize");
+const sequelize = require('sequelize');
 
 const scheme = {
-  // id: sequelize.DataTypes.STRING,
   type: sequelize.DataTypes.STRING,
   email: sequelize.DataTypes.STRING,
   password: sequelize.DataTypes.STRING,
@@ -17,7 +15,7 @@ const scheme = {
 };
 
 module.exports = (sequelize) => {
-  let User = sequelize.define("User", scheme);
+  let User = sequelize.define('User', scheme);
 
   return User;
 };

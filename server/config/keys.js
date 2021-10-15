@@ -1,3 +1,3 @@
 module.exports = {
-  jwt: "yrt4i65h",
+  jwt: 'yrt4i65h',
 };

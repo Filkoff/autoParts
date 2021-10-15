@@ -1,8 +1,9 @@
-import { Button } from '@material-ui/core';
 import React from 'react';
+import { Button } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 import styles from './CartPopup.module.scss';
 
 function CartPopup({ showPopup, setShowPopup }) {
@@ -27,7 +28,10 @@ function CartPopup({ showPopup, setShowPopup }) {
                       <img className={styles.image} src={item.img} alt="" />
                     </div>
                     <p className={styles.name}>{item.name}</p>
-                    <p className={styles.info}>{item.price}р</p>
+                    <p className={styles.info}>
+                      {item.price}
+                      {t('currency')}
+                    </p>
                     <p className={styles.info}>x {item.amount}</p>
                   </div>
                 </div>
@@ -37,11 +41,13 @@ function CartPopup({ showPopup, setShowPopup }) {
           <div className={styles.infoBottom}>
             <div className={styles.info}>
               <h3>
-                {t('total')}: {total.toFixed(2)}р
+                {t('total')}: {total.toFixed(2)}
+                {t('currency')}
               </h3>
             </div>
             <NavLink to="/cart">
               <Button
+                id="cartButton"
                 onClick={() => setShowPopup(false)}
                 color="primary"
                 variant="contained"
@@ -56,5 +62,10 @@ function CartPopup({ showPopup, setShowPopup }) {
   }
   return null;
 }
+
+CartPopup.propTypes = {
+  showPopup: PropTypes.bool,
+  setShowPopup: PropTypes.func,
+};
 
 export default CartPopup;

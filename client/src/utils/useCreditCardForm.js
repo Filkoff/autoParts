@@ -5,7 +5,7 @@ import { customerOrders } from '../actions/customer';
 import { removeOrdered } from '../reducers/cartReducer';
 import validateInfo from './validateInfo';
 
-const useForm = () => {
+const useCreditCardForm = () => {
   const [values, setValues] = useState({
     cardName: '',
     cardNumber: '',
@@ -56,4 +56,4 @@ const useForm = () => {
   };
 };
 
-export default useForm;
+export default useCreditCardForm;

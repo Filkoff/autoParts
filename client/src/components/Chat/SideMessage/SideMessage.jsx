@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { setCurrentPerson } from '../../../reducers/chatReducer';
+import PropTypes from 'prop-types';
 import styles from './SideMessage.module.scss';
 
 function SideMessage({ message }) {
@@ -30,5 +31,13 @@ function SideMessage({ message }) {
     </NavLink>
   );
 }
+
+SideMessage.propTypes = {
+  message: PropTypes.shape({
+    id: PropTypes.number,
+    person: PropTypes.string,
+    messages: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
+  }),
+};
 
 export default SideMessage;

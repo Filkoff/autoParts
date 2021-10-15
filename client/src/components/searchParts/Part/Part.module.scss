@@ -12,13 +12,12 @@
   font-weight: 700;
   text-transform: uppercase;
 }
-
-.img {
+.image {
   max-width: 200px;
   max-height: 200px;
 }
-.button {
-  margin: 20px !important;
+button.button {
+  margin: 20px;
 }
 @media (max-width: 576px) {
   .card {

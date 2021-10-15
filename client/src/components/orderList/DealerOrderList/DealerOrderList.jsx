@@ -12,7 +12,7 @@ function DealerOrderList() {
     <div className={styles.container}>
       <h2>{t('yourOrders')}</h2>
       {orders.map((item) => (
-        <Order key={item.id} order={item}>
+        <Order key={item.orderId} order={item}>
           <p>
             {t('phone')}: {item.phoneNumber}
           </p>

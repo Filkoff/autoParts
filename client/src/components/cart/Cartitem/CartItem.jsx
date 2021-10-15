@@ -1,14 +1,16 @@
-import { Button } from '@material-ui/core';
 import React from 'react';
+import { Button } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { minusItem, plusItem, removeItem } from '../../../reducers/cartReducer';
 import CloseIcon from '@material-ui/icons/Close';
+import PropTypes from 'prop-types';
 import styles from './CartItem.module.scss';
 
 function CartItem({ part }) {
   const dispatch = useDispatch();
   const { t } = useTranslation();
+  const partTotalPrice = (part.amount * part.price).toFixed(2);
   return (
     <>
       <div className={styles.row}>
@@ -24,7 +26,10 @@ function CartItem({ part }) {
           </p>
         </div>
         <div className={styles.ceil}>
-          <p>{part.price}р</p>
+          <p>
+            {part.price}
+            {t('currency')}
+          </p>
         </div>
         <div className={styles.ceil}>
           <div>
@@ -44,7 +49,10 @@ function CartItem({ part }) {
           </div>
         </div>
         <div className={styles.ceil}>
-          <b>{(part.amount * part.price).toFixed(2)}р</b>
+          <b>
+            {partTotalPrice}
+            {t('currency')}
+          </b>
         </div>
         <CloseIcon
           className={styles.deleteIcon}
@@ -58,5 +66,18 @@ function CartItem({ part }) {
     </>
   );
 }
+
+CartItem.propTypes = {
+  part: PropTypes.shape({
+    id: PropTypes.string,
+    category: PropTypes.string,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    price: PropTypes.number,
+    condition: PropTypes.string,
+    amount: PropTypes.number,
+    img: PropTypes.string,
+  }),
+};
 
 export default CartItem;

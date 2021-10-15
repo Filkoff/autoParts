@@ -1,5 +1,5 @@
 export const urlChecker = (str) => {
-  var reg = str.match(
+  const reg = str.match(
     /(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#/%=~_|$?!:,.]*\)|[A-Z0-9+&@#/%=~_|$])/gim
   );
   for (let key in reg) {

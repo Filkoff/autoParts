@@ -1,5 +1,5 @@
-const controller = require("../controllers/Compare.controller");
+const controller = require('../controllers/Compare.controller');
 
 module.exports = (app) => {
-  app.post("/api/dealers/parts/compare", controller.getComparedParts);
+  app.post('/api/dealers/parts/compare', controller.getComparedParts);
 };

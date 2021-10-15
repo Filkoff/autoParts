@@ -5,11 +5,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import avatarLogo from '../../../assets/img/avatar.jpg';
-import { API_URL } from '../../../config';
 import { logout } from '../../../reducers/userReducer';
 import CartIcon from '../CartIcon/CartIcon';
 import CommentIcon from '@material-ui/icons/Comment';
 import { clearCurrentPerson } from '../../../reducers/chatReducer';
+import { avatarUrl } from '../../../utils/avatarUrlCreator';
 
 const HeaderNav = () => {
   const { t } = useTranslation();
@@ -18,7 +18,7 @@ const HeaderNav = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
 
   const avatar = currentUser.avatar
-    ? `${API_URL + currentUser.avatar}`
+    ? avatarUrl(currentUser.avatar)
     : avatarLogo;
 
   return (
@@ -32,7 +32,6 @@ const HeaderNav = () => {
 
         <div className={styles.iconContainer}>
           <NavLink to="/chat">
-            {' '}
             <CommentIcon
               fontSize="large"
               className={styles.commentIcon}

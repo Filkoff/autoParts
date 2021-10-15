@@ -1,4 +1,4 @@
-export const categories = [
+export const CATEGORIES = [
   'ФИЛЬТРЫ',
   'ТОРМОЗНАЯ СИСТЕМА',
   'СИСТЕМА ЗАЖИГАНИЯ',

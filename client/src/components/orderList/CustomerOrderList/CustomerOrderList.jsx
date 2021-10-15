@@ -10,9 +10,11 @@ function CustomerOrderList() {
   return (
     <div className={styles.container}>
       <h2>{t('yourOrders')}</h2>
-      {orders.map((item) => (
-        <Order key={item.id} order={item} />
-      ))}
+      <div className={styles.orders} id="orders">
+        {orders.map((item) => (
+          <Order key={item.orderId} order={item} />
+        ))}
+      </div>
     </div>
   );
 }

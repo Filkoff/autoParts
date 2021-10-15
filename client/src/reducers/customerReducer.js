@@ -6,7 +6,14 @@ const defaultState = {
   orders: [],
   tempOrders: {},
   tempDeliveryData: {},
-  deliveryData: {},
+  deliveryData: {
+    name: '',
+    surname: '',
+    address: '',
+    phone: '',
+    time: '',
+    saveData: false,
+  },
 };
 
 export default function customerReducer(

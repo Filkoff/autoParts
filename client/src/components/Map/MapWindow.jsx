@@ -2,8 +2,12 @@
 import React, { useState } from 'react';
 import { setAddress } from '../../actions/user';
 import { store } from '../../reducers/index';
+import styles from './MapWindow.module.scss';
+import i18next from 'i18next';
+
 const state = store.getState();
 const currentUser = state.user.currentUser;
+
 function init() {
   let myPlacemark,
     myMap = new ymaps.Map(
@@ -16,8 +20,8 @@ function init() {
         searchControlProvider: 'yandex#search',
       }
     );
-  const geolocation = ymaps.geolocation;
-  geolocation
+  const location = ymaps.geolocation;
+  location
     .get({
       provider: 'browser',
       mapStateAutoApply: true,
@@ -28,7 +32,7 @@ function init() {
     });
 
   myMap.events.add('click', function (e) {
-    var coords = e.get('coords');
+    let coords = e.get('coords');
     if (myPlacemark) {
       myPlacemark.geometry.setCoordinates(coords);
     } else {
@@ -45,7 +49,7 @@ function init() {
     return new ymaps.Placemark(
       coords,
       {
-        iconCaption: 'поиск...',
+        iconCaption: i18next.t('map.search'),
       },
       {
         preset: 'islands#violetDotIconWithCaption',
@@ -55,9 +59,9 @@ function init() {
   }
 
   function getAddress(coords) {
-    myPlacemark.properties.set('iconCaption', 'поиск...');
+    myPlacemark.properties.set('iconCaption', i18next.t('map.search'));
     ymaps.geocode(coords).then(function (res) {
-      var firstGeoObject = res.geoObjects.get(0);
+      let firstGeoObject = res.geoObjects.get(0);
 
       myPlacemark.properties.set({
         iconCaption: [
@@ -84,7 +88,7 @@ function MapWindow() {
 
   return (
     <>
-      <div id="map" style={{ maxWidth: '600px', height: '400px' }}></div>
+      <div id="map" className={styles.map}></div>
     </>
   );
 }

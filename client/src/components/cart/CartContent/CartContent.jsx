@@ -5,6 +5,7 @@ import styles from './CartContent.module.scss';
 import shortid from 'shortid';
 import { useTranslation } from 'react-i18next';
 import CartDealer from '../CartDealer/CartDealer';
+import sortItems from '../../../utils/sortCartItems';
 
 function CartContent() {
   const items = useSelector((state) => state.cart.items);
@@ -17,16 +18,8 @@ function CartContent() {
     return acc + parseFloat(cur.price) * cur.amount;
   }, 0);
 
-  let ob = {};
-  for (let i of items) {
-    if (!(i.dealer.name in ob)) {
-      ob[i.dealer.name] = [i];
-    } else {
-      ob[i.dealer.name].push(i);
-    }
-  }
   useEffect(() => {
-    dispatch(setSortedCart(ob));
+    dispatch(setSortedCart(sortItems(items)));
   }, [items]);
 
   const content = (
@@ -46,7 +39,8 @@ function CartContent() {
         </div>
         <div>
           <h3 className={styles.tableTotal}>
-            {t('total')}: {total.toFixed(2)}р
+            {t('total')}: {total.toFixed(2)}
+            {t('currency')}
           </h3>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Message from '../Message/Message';
 import styles from './MessagesContainer.module.scss';
+import shortid from 'shortid';
 
 function MessagesContainer() {
   const chats = useSelector((state) => state.chat.chats);
@@ -11,8 +12,8 @@ function MessagesContainer() {
     <div className={styles.container}>
       {currentChat ? (
         <div className={styles.messagesContainer}>
-          {currentChat.messages.map((message, index) => (
-            <Message message={message} key={index} />
+          {currentChat.messages.map((message) => (
+            <Message message={message} key={shortid.generate()} />
           ))}
         </div>
       ) : null}

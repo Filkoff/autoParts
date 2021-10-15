@@ -1,11 +1,11 @@
-const fs = require("fs");
-const haversine = require("haversine-distance");
+const fs = require('fs');
+const haversine = require('haversine-distance');
 
 module.exports = {
   async getAllParts(req, res) {
     fs.readFile(
-      __dirname + "/../data/allParts.json",
-      "utf8",
+      __dirname + '/../data/allParts.json',
+      'utf8',
       (err, jsonString) => {
         if (err) {
           res.status(404);
@@ -25,8 +25,8 @@ module.exports = {
 
   async getSortedParts(req, res) {
     fs.readFile(
-      __dirname + "/../data/dealerParts.json",
-      "utf8",
+      __dirname + '/../data/dealerParts.json',
+      'utf8',
       (err, jsonString) => {
         if (err) {
           res.status(404);

@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   Button,
   Checkbox,
@@ -6,7 +7,7 @@ import {
   NativeSelect,
   TextField,
 } from '@material-ui/core';
-import React, { useState } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import {
@@ -14,7 +15,7 @@ import {
   tempDeliveryData,
 } from '../../reducers/customerReducer';
 import styles from './OrderForm.module.scss';
-import Modal from '../Modal/Modal';
+import Modal from '../Modal/ModalWindow';
 import { customerOrders } from '../../actions/customer';
 import { removeOrdered } from '../../reducers/cartReducer';
 import { useTranslation } from 'react-i18next';
@@ -27,7 +28,7 @@ function OrderForm() {
   const [phone, setPhone] = useState(deliveryData.phone);
   const [time, setTime] = useState(deliveryData.time);
   const [saveData, setSaveData] = useState(deliveryData.savedata);
-  const [show, setShow] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const orders = useSelector((state) => state.customer.tempOrders);
@@ -58,7 +59,7 @@ function OrderForm() {
     );
 
     event.preventDefault();
-    setShow(true);
+    setIsVisible(true);
   };
 
   return (
@@ -72,6 +73,7 @@ function OrderForm() {
                 <div className={styles.inputs}>
                   <div className={styles.inputContainer}>
                     <TextField
+                      id="nameInput"
                       label={t('name')}
                       className={styles.input}
                       name="name"
@@ -83,6 +85,7 @@ function OrderForm() {
                   </div>
                   <div className={styles.inputContainer}>
                     <TextField
+                      id="surnameInput"
                       label={t('surname')}
                       className={styles.input}
                       name="surname"
@@ -94,6 +97,7 @@ function OrderForm() {
                   </div>
                   <div className={styles.inputContainer}>
                     <TextField
+                      id="addressInput"
                       className={styles.input}
                       label={t('address')}
                       name="address"
@@ -105,12 +109,13 @@ function OrderForm() {
                   </div>
                   <div className={styles.inputContainer}>
                     <TextField
+                      id="phoneInput"
                       className={styles.input}
                       label={t('phone')}
                       name="tel"
                       pattern="+[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
                       value={phone}
-                      helperText="формат: +375-29-111-11-11"
+                      helperText={`${t('format')}: +375-29-111-11-11`}
                       onChange={(e) => setPhone(e.target.value)}
                       required
                     />
@@ -119,6 +124,7 @@ function OrderForm() {
                     <InputLabel className={styles.input}>
                       {t('deliveryTime')}:
                       <NativeSelect
+                        id="timeSelect"
                         name="time"
                         value={time}
                         onChange={(e) => setTime(e.target.value)}
@@ -141,16 +147,22 @@ function OrderForm() {
                     </label>
                   </div>
                 </div>
-                <Button color="primary" variant="contained" type="submit">
+                <Button
+                  id="goToPayment"
+                  color="primary"
+                  variant="contained"
+                  type="submit"
+                >
                   {t('toPay')}
                 </Button>
               </Container>
             </form>
           </div>
-          <Modal show={show} setShow={setShow}>
-            <h3 className={styles.header}>Выберите способ оплаты</h3>
+          <Modal show={isVisible} setShow={setIsVisible}>
+            <h3 className={styles.header}>{t('paymentType')}</h3>
             <NavLink to="/order/success">
               <Button
+                id="payByCashButton"
                 className={styles.button}
                 variant="contained"
                 color="primary"
@@ -164,6 +176,7 @@ function OrderForm() {
             </NavLink>
             <NavLink to="/order/card-data">
               <Button
+                id="payByCardButton"
                 className={styles.button}
                 variant="contained"
                 color="primary"

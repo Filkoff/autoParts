@@ -1,8 +1,9 @@
-import { Button, TextField } from '@material-ui/core';
 import React, { useState } from 'react';
+import { Button, TextField } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import SendIcon from '@material-ui/icons/Send';
 import { addMessage } from '../../../reducers/chatReducer';
+import DOMPurify from 'dompurify';
 import styles from './Input.module.scss';
 
 function Input() {
@@ -10,20 +11,20 @@ function Input() {
   const person = useSelector((state) => state.chat.currentPerson);
   const dispatch = useDispatch();
   const now = new Date().toLocaleString();
-  const m = [message, now];
+  const newMessage = [DOMPurify.sanitize(message), now, 'userMessage'];
   return (
-    <div className={styles.inputContainer}>
+    <div className={styles.container}>
       {person.name ? (
         <form
           onSubmit={(e) => {
             e.preventDefault();
             if (message) {
-              dispatch(addMessage(person.id, person.name, m));
+              dispatch(addMessage(person.id, person.name, newMessage));
               setMessage('');
             }
           }}
         >
-          <div className={styles.inputR}>
+          <div className={styles.inputContainer}>
             <TextField
               className={styles.input}
               multiline

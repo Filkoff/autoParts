@@ -1,11 +1,11 @@
-import { Button, Input, NativeSelect } from '@material-ui/core';
-
 import React, { useState } from 'react';
+import { Button, Input, NativeSelect } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styles from './AddPart.module.scss';
 import { addNewPart } from '../../../actions/dealer';
+import shortid from 'shortid';
 
 function AddPart() {
   const dispatch = useDispatch();
@@ -18,15 +18,33 @@ function AddPart() {
   const [description, setDescription] = useState('');
   const models = currentPart.models;
   const [condition, setCondition] = useState('');
-  const [price, setPrice] = useState('');
+  const [price, setPrice] = useState(0);
   const [production, setProduction] = useState('');
-  const [img, setImg] = useState('');
+  const [img, setImg] = useState('/assets/images/gear.png');
   const { t } = useTranslation();
+  const partId = shortid.generate();
+
+  const addPartHandler = () => {
+    dispatch(
+      addNewPart(
+        partId,
+        category,
+        name,
+        description,
+        models,
+        img,
+        condition,
+        price,
+        production
+      )
+    );
+  };
 
   async function inputHandler(e) {
     const img = URL.createObjectURL(e.target.files[0]);
     setImg(img);
   }
+
   return (
     <div className={styles.container}>
       <div className={styles.form}>
@@ -60,7 +78,7 @@ function AddPart() {
           <b>{t('partName')}:</b> {currentPart.name}
         </div>
         <div className={styles.info}>
-          <b>{t('description')}:</b>{' '}
+          <b>{t('description')}: </b>
           <Input
             className={styles.description}
             value={description}
@@ -71,7 +89,7 @@ function AddPart() {
           <b>{t('model')}:</b> {currentPart.models}
         </div>
         <div className={styles.info}>
-          <b>{t('condition')}:</b>{' '}
+          <b>{t('condition')}: </b>
           <NativeSelect onChange={(e) => setCondition(e.target.value)}>
             <option value={''}></option>
             <option value={'новая'}>{t('new')}</option>
@@ -79,11 +97,15 @@ function AddPart() {
           </NativeSelect>
         </div>
         <div className={styles.info}>
-          <b>{t('price')}:</b>{' '}
-          <Input value={price} onChange={(e) => setPrice(e.target.value)} />
+          <b>{t('price')}: </b>
+          <Input
+            type="number"
+            value={price}
+            onChange={(e) => setPrice(Number(e.target.value))}
+          />
         </div>
         <div className={styles.info}>
-          <b>{t('production')}:</b>{' '}
+          <b>{t('production')}: </b>
           <Input
             value={production}
             onChange={(e) => setProduction(e.target.value)}
@@ -94,21 +116,7 @@ function AddPart() {
             className={styles.button}
             variant="contained"
             color="primary"
-            onClick={() => {
-              dispatch(
-                addNewPart(
-                  `f${Date.now().toString(16)}`,
-                  category,
-                  name,
-                  description,
-                  models,
-                  img,
-                  condition,
-                  price,
-                  production
-                )
-              );
-            }}
+            onClick={addPartHandler}
           >
             {t('save')}
           </Button>

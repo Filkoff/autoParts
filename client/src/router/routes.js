@@ -14,7 +14,6 @@ import Login from '../components/pages/Login/Login';
 import MainPage from '../components/pages/MainPage/MainPage';
 import Profile from '../components/pages/Profile/Profile';
 import Registration from '../components/pages/Registration/Registration';
-import PaymentSelect from '../components/PaymentSelect/PaymentSelect';
 import PartsList from '../components/searchParts/PartsList/PartsList';
 import AddPart from '../components/templates/AddPart/AddPart';
 import PartsSet from '../components/templates/PartsSet/PartsSet';
@@ -117,11 +116,6 @@ export const privateRoutes = [
   {
     path: '/order/card-data',
     component: CreditCardForm,
-    exact: true,
-  },
-  {
-    path: '/order/payment-type',
-    component: PaymentSelect,
     exact: true,
   },
   {

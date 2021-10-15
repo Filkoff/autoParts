@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Box,
   Button,
@@ -6,20 +7,19 @@ import {
   Tabs,
   TextField,
 } from '@material-ui/core';
-import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getAllParts } from '../../actions/data';
 import { searchParts } from '../../actions/search';
 import styles from './Search.module.scss';
-import { categories } from '../../consts/partsCatrgories';
+import { CATEGORIES } from '../../consts/partsCatrgories';
 import { useTranslation } from 'react-i18next';
 
 function Search() {
   const [category, setCategory] = useState('');
   const [model, setModel] = useState('');
-  const [name, setnName] = useState('');
+  const [name, setName] = useState('');
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const [value, setValue] = useState(0);
@@ -64,14 +64,14 @@ function Search() {
     <>
       <div className={styles.searchField}>
         <div className={styles.singleSearch}>
-          <p className={styles.label}>{t('category')}:</p>
+          <div className={styles.label}>{t('category')}:</div>
           <NativeSelect
             id="category"
             onChange={(e) => setCategory(e.target.value)}
             className={styles.input1}
           >
             <option value=""></option>
-            {categories.map((item, index) => {
+            {CATEGORIES.map((item, index) => {
               return (
                 <option key={index} value={`${item}`}>
                   {item}
@@ -81,7 +81,7 @@ function Search() {
           </NativeSelect>
         </div>
         <div className={styles.singleSearch}>
-          <p className={styles.label}>{t('model')}:</p>
+          <div className={styles.label}>{t('model')}:</div>
           <TextField
             id="model"
             className={styles.input}
@@ -92,14 +92,14 @@ function Search() {
           />
         </div>
         <div className={styles.singleSearch}>
-          <p className={styles.label}>{t('partName')}:</p>
+          <div className={styles.label}>{t('partName')}:</div>
           <TextField
             className={styles.input}
             variant="outlined"
             id="name"
             value={name}
             type="text"
-            onChange={(e) => setnName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
         {value === 0 && searchButton}

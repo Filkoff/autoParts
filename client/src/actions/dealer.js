@@ -6,19 +6,18 @@ import {
   setDealerOrders,
   setDealerParts,
 } from '../reducers/dealerReducer';
+import { getAuthToken } from '../utils/getAuthToken';
+import { BASE_URL } from '../consts/baseURL';
 
 export const getAllDealerParts = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get(
-        'http://localhost:8080/api/dealer/parts/all',
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
-        }
-      );
+      const response = await axios.get(BASE_URL + 'dealer/parts/all', {
+        headers: { Authorization: getAuthToken() },
+      });
       dispatch(setDealerParts(response.data));
     } catch (e) {
-      console.log(e.message);
+      console.error(e.message);
     }
   };
 };
@@ -26,12 +25,12 @@ export const getAllDealerParts = () => {
 export const deleteDealerPart = (id) => {
   return async (dispatch) => {
     try {
-      await axios.delete('http://localhost:8080/api/dealer/parts/:id', {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+      await axios.delete(BASE_URL + 'dealer/parts/:id', {
+        headers: { Authorization: getAuthToken() },
       });
       dispatch(deletePart(id));
     } catch (e) {
-      console.log(e.message);
+      console.error(e.message);
     }
   };
 };
@@ -49,8 +48,8 @@ export const changeDealerPart = (
 ) => {
   return async (dispatch) => {
     try {
-      const response = await axios.patch(
-        'http://localhost:8080/api/dealer/parts/:id',
+      await axios.patch(
+        BASE_URL + 'dealer/parts/:id',
         {
           id,
           category,
@@ -63,10 +62,9 @@ export const changeDealerPart = (
           production,
         },
         {
-          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+          headers: { Authorization: getAuthToken() },
         }
       );
-      console.log(response);
       dispatch(
         changePart({
           id,
@@ -81,7 +79,7 @@ export const changeDealerPart = (
         })
       );
     } catch (e) {
-      console.log(e.message);
+      console.error(e.message);
     }
   };
 };
@@ -97,10 +95,10 @@ export const addNewPart = (
   price,
   production
 ) => {
-  try {
-    async (dispatch) => {
+  return async (dispatch) => {
+    try {
       await axios.post(
-        'http://localhost:8080/api/dealer/parts/add',
+        BASE_URL + 'dealer/parts/add',
         {
           id,
           category,
@@ -113,9 +111,10 @@ export const addNewPart = (
           production,
         },
         {
-          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+          headers: { Authorization: getAuthToken() },
         }
       );
+
       dispatch(
         addPart({
           id,
@@ -129,25 +128,22 @@ export const addNewPart = (
           production,
         })
       );
-    };
-  } catch (e) {
-    console.log(e.message);
-  }
+    } catch (e) {
+      console.error(e.message);
+    }
+  };
 };
 
 export const dealerOrders = (id) => {
   return async (dispatch) => {
     try {
-      const orders = await axios.get(
-        `http://localhost:8080/api/dealer/:${id}/orders`,
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
-        }
-      );
+      const orders = await axios.get(BASE_URL + `dealer/:${id}/orders`, {
+        headers: { Authorization: getAuthToken() },
+      });
 
       dispatch(setDealerOrders(orders.data));
     } catch (e) {
-      console.log(e.message);
+      console.error(e.message);
     }
   };
 };

@@ -1,10 +1,11 @@
-import { Button } from '@material-ui/core';
 import React from 'react';
+import { Button } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deleteDealerPart } from '../../../../actions/dealer';
 import styles from './DealerPart.module.scss';
 import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 
 function DealerPart({
   id,
@@ -38,7 +39,8 @@ function DealerPart({
           {t('condition')}: {condition}
         </p>
         <p className={styles.info}>
-          {t('price')}: {price}р
+          {t('price')}: {price}
+          {t('currency')}
         </p>
         <Link to={`/dealer/parts/${id}`}>
           <Button className={styles.button} variant="contained" color="primary">
@@ -57,5 +59,16 @@ function DealerPart({
     </div>
   );
 }
+
+DealerPart.propTypes = {
+  id: PropTypes.string,
+  category: PropTypes.string,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  models: PropTypes.string,
+  img: PropTypes.string,
+  condition: PropTypes.string,
+  price: PropTypes.number,
+};
 
 export default DealerPart;

@@ -7,15 +7,30 @@ import {
   Button,
   Container,
 } from '@material-ui/core';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { login } from '../../../actions/user';
 import styles from './Login.module.scss';
 import { useTranslation } from 'react-i18next';
+import useValidation from '../../../utils/useValidation';
+
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const { t } = useTranslation();
+  const [isEmailCorrect, errorText] = useValidation(email);
+  const [isInputChanged, setIsInputChanged] = useState(false);
+  const router = useHistory();
+  const handleBlur = () => {
+    setIsInputChanged(true);
+  };
+
+  const loginHandler = () => {
+    if (isEmailCorrect) {
+      router.push('/main');
+      dispatch(login(email, password));
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -27,21 +42,24 @@ function Login() {
           </DialogTitle>
           <DialogContent>
             <TextField
+              error={!isEmailCorrect && isInputChanged ? !isEmailCorrect : null}
+              helperText={!isEmailCorrect && isInputChanged ? errorText : ''}
               required
               autoFocus
               margin="dense"
               id="email"
-              label="Ваш email"
+              label={t('yourEmail')}
               type="email"
               fullWidth
               value={email}
+              onBlur={handleBlur}
               onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
               required
               margin="dense"
               id="password"
-              label="Введите пароль"
+              label={t('enterPassword')}
               type="password"
               fullWidth
               value={password}
@@ -49,17 +67,16 @@ function Login() {
             />
           </DialogContent>
 
-          <NavLink to={'/main'}>
-            <Button
-              id="login"
-              className={styles.button}
-              onClick={() => dispatch(login(email, password))}
-              variant="contained"
-              color="primary"
-            >
-              {t('login.logIn')}
-            </Button>
-          </NavLink>
+          <Button
+            id="login"
+            className={styles.button}
+            onClick={loginHandler}
+            variant="contained"
+            color="primary"
+          >
+            {t('login.logIn')}
+          </Button>
+
           <NavLink to={'/'}>
             <Button
               className={styles.button}
