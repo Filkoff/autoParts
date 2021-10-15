@@ -2,13 +2,13 @@
 
 
 ## Server part
-### For running this app you should use PostgreSQL.
-### Create database called "people", where our users with personal data will be stored.
-### Install all dependencies: $ npm i
-### Run the server: $ npm run start (that will also automatically create table called Users in our database)
+  For running this app you should use PostgreSQL.
+  Create database called "people", where our users with personal data will be stored.
+  Install all dependencies: $ npm i
+  Run the server: $ npm run start (that will also automatically create table called Users in our database)
 
 
 ## Client part
-### Install all dependencies: $ npm i
-### Run the client: $ npm run start
-### For integration testing (Cypress) use:  $ npm run test
+  Install all dependencies: $ npm i
+  Run the client: $ npm run start
+  For integration testing (Cypress) use:  $ npm run test
