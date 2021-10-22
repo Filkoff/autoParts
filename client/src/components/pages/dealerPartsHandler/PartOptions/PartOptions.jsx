@@ -96,6 +96,7 @@ function PartOptions({ newId, setPart }) {
         <div className={styles.info}>
           <b>{t('price')}: </b>
           <Input
+            id="price"
             value={price}
             onChange={(e) => setPrice(Number(e.target.value))}
           />
@@ -109,6 +110,7 @@ function PartOptions({ newId, setPart }) {
         </div>
         <NavLink to="/profile/myParts">
           <Button
+            id="saveButton"
             className={styles.button}
             variant="contained"
             color="primary"

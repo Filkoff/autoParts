@@ -1,8 +1,10 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/breakpoints';
 .avatar {
   width: 200px;
   height: 200px;
   object-fit: contain;
-  margin: 0px auto;
+  margin: 0 auto;
 }
 button.button {
   margin: 20px;
@@ -50,7 +52,8 @@ button.button {
   justify-content: center;
 }
 .userInfoContainer {
-  background-color: #ebebeb;
+  margin-bottom: 20px;
+  background-color: $light-gray;
 }
 .heading {
   margin-bottom: 20px;
@@ -61,4 +64,16 @@ button.button {
 }
 .createIcon {
   cursor: pointer;
+}
+@media (max-width: $sm) {
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+  .userInfoContainer {
+    max-width: 200px;
+  }
+  .userInfo {
+    padding: 0px;
+  }
 }

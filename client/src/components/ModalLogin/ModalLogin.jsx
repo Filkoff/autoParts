@@ -3,12 +3,13 @@ import { Button } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 import styles from './ModalLogin.module.scss';
 import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 
-function ModalLogin() {
+function ModalLogin({ setIsModalShown }) {
   const { t } = useTranslation();
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
+    <div className={styles.container} onClick={() => setIsModalShown(false)}>
+      <div className={styles.content} onClick={(e) => e.stopPropagation()}>
         <h3>{t('askToLogin')}</h3>
         <div>
           <NavLink to="/login">
@@ -34,5 +35,9 @@ function ModalLogin() {
     </div>
   );
 }
+
+ModalLogin.propTypes = {
+  setIsModalShown: PropTypes.func,
+};
 
 export default ModalLogin;

@@ -13,8 +13,8 @@ module.exports = {
       user.avatar = avatarName;
       await user.save();
       return res.send(user);
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.error(err);
       return res.status(404).send({ message: 'Avatar uploading error' });
     }
   },
@@ -26,8 +26,8 @@ module.exports = {
       user.avatar = null;
       await user.save();
       return res.send(user);
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.error(err);
       return res.status(404).send({ message: 'Avatar deleting error' });
     }
   },

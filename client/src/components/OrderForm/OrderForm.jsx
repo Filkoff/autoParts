@@ -22,39 +22,41 @@ import { useTranslation } from 'react-i18next';
 
 function OrderForm() {
   const deliveryData = useSelector((state) => state.customer.deliveryData);
-  const [name, setName] = useState(deliveryData.name);
-  const [surname, setSurname] = useState(deliveryData.surname);
-  const [address, setAddress] = useState(deliveryData.address);
-  const [phone, setPhone] = useState(deliveryData.phone);
-  const [time, setTime] = useState(deliveryData.time);
-  const [saveData, setSaveData] = useState(deliveryData.savedata);
+  const [deliveryDataList, setDeliveryDataList] = useState({
+    name: deliveryData.name,
+    surname: deliveryData.surname,
+    address: deliveryData.address,
+    phone: deliveryData.phone,
+    time: deliveryData.time,
+    saveData: deliveryData.savedata,
+  });
   const [isVisible, setIsVisible] = useState(false);
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const orders = useSelector((state) => state.customer.tempOrders);
   const currentUser = useSelector((state) => state.user.currentUser);
   const handleSubmit = (event) => {
-    if (saveData) {
+    if (deliveryDataList.saveData) {
       dispatch(
         newDeliveryData({
-          name: name,
-          surname: surname,
-          address: address,
-          phone: phone,
-          time: time,
-          savedata: saveData,
+          name: deliveryDataList.name,
+          surname: deliveryDataList.surname,
+          address: deliveryDataList.address,
+          phone: deliveryDataList.phone,
+          time: deliveryDataList.time,
+          savedata: deliveryDataList.saveData,
         })
       );
     }
 
     dispatch(
       tempDeliveryData({
-        name: name,
-        surname: surname,
-        address: address,
-        phone: phone,
-        time: time,
-        savedata: saveData,
+        name: deliveryDataList.name,
+        surname: deliveryDataList.surname,
+        address: deliveryDataList.address,
+        phone: deliveryDataList.phone,
+        time: deliveryDataList.time,
+        savedata: deliveryDataList.saveData,
       })
     );
 
@@ -78,8 +80,13 @@ function OrderForm() {
                       className={styles.input}
                       name="name"
                       type="text"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      value={deliveryDataList.name}
+                      onChange={(e) =>
+                        setDeliveryDataList({
+                          ...deliveryDataList,
+                          name: e.target.value,
+                        })
+                      }
                       required
                     />
                   </div>
@@ -90,8 +97,13 @@ function OrderForm() {
                       className={styles.input}
                       name="surname"
                       type="text"
-                      value={surname}
-                      onChange={(e) => setSurname(e.target.value)}
+                      value={deliveryDataList.surname}
+                      onChange={(e) =>
+                        setDeliveryDataList({
+                          ...deliveryDataList,
+                          surname: e.target.value,
+                        })
+                      }
                       required
                     />
                   </div>
@@ -102,8 +114,13 @@ function OrderForm() {
                       label={t('address')}
                       name="address"
                       type="text"
-                      value={address}
-                      onChange={(e) => setAddress(e.target.value)}
+                      value={deliveryDataList.address}
+                      onChange={(e) =>
+                        setDeliveryDataList({
+                          ...deliveryDataList,
+                          address: e.target.value,
+                        })
+                      }
                       required
                     />
                   </div>
@@ -112,11 +129,16 @@ function OrderForm() {
                       id="phoneInput"
                       className={styles.input}
                       label={t('phone')}
-                      name="tel"
+                      name="phone"
                       pattern="+[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
-                      value={phone}
+                      value={deliveryDataList.phone}
                       helperText={`${t('format')}: +375-29-111-11-11`}
-                      onChange={(e) => setPhone(e.target.value)}
+                      onChange={(e) =>
+                        setDeliveryDataList({
+                          ...deliveryDataList,
+                          phone: e.target.value,
+                        })
+                      }
                       required
                     />
                   </div>
@@ -126,8 +148,13 @@ function OrderForm() {
                       <NativeSelect
                         id="timeSelect"
                         name="time"
-                        value={time}
-                        onChange={(e) => setTime(e.target.value)}
+                        value={deliveryDataList.time}
+                        onChange={(e) =>
+                          setDeliveryDataList({
+                            ...deliveryDataList,
+                            time: e.target.value,
+                          })
+                        }
                       >
                         <option value=""></option>
                         <option value="10:00-15:00">10:00-15:00</option>
@@ -140,7 +167,10 @@ function OrderForm() {
                       <Checkbox
                         name="saveData"
                         onChange={() => {
-                          setSaveData(!saveData);
+                          setDeliveryDataList({
+                            ...deliveryDataList,
+                            saveData: !deliveryDataList.savedata,
+                          });
                         }}
                       />
                       {t('saveData')}

@@ -1,10 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import SideMessage from '../SideMessage/SideMessage';
 import styles from './SideChat.module.scss';
+import PropTypes from 'prop-types';
 
-function SideChat() {
-  const chats = useSelector((state) => state.chat.chats);
+function SideChat({ chats }) {
   return (
     <div className={styles.container}>
       <div>
@@ -15,5 +14,9 @@ function SideChat() {
     </div>
   );
 }
+
+SideChat.propTypes = {
+  chats: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default SideChat;

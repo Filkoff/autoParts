@@ -1,17 +1,16 @@
-.container {
-  margin-top: 100px;
-}
+@import '../../../../styles/colors';
+@import '../../../../styles/breakpoints';
 
 .image {
   max-width: 300px;
   max-height: 300px;
 }
 .form {
-  margin: 0 auto;
+  margin: 0 auto 30px;
   max-width: 500px;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: -1px 8px 15px 0px rgba(0, 0, 0, 0.44);
+  box-shadow: -1px 8px 15px 0 $bg-transparent;
 }
 .heading {
   margin-bottom: 20px;
@@ -21,7 +20,7 @@
   width: 50px;
   height: 80px;
   cursor: pointer;
-  border: 1px solid black;
+  border: 1px solid $bg-gray;
   padding: 10px;
   border-radius: 5px;
 }
@@ -48,4 +47,15 @@ button.button {
 .description {
   max-width: 100%;
   word-break: break-word;
+}
+@media (max-width: $sm) {
+  .image {
+    max-width: 150px;
+    max-height: 150px;
+    margin: 20px;
+  }
+  .form {
+    max-width: 300px;
+    padding: 20px;
+  }
 }

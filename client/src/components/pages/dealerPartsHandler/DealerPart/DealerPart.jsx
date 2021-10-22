@@ -43,11 +43,17 @@ function DealerPart({
           {t('currency')}
         </p>
         <Link to={`/dealer/parts/${id}`}>
-          <Button className={styles.button} variant="contained" color="primary">
+          <Button
+            id="changeButton"
+            className={`${styles.button}`}
+            variant="contained"
+            color="primary"
+          >
             {t('change')}
           </Button>
         </Link>
         <Button
+          id="deleteButton"
           className={styles.button}
           variant="contained"
           color="primary"

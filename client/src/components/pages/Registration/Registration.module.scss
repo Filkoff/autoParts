@@ -1,3 +1,4 @@
+@import '../../../styles/breakpoints';
 button.button {
   margin: 10px;
 }
@@ -8,7 +9,8 @@ button.button {
   align-items: center;
   justify-content: space-between;
 }
-
-.container {
-  padding-top: 100px;
+@media (max-width: $sm) {
+  .image {
+    max-width: 300px;
+  }
 }

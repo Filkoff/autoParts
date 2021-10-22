@@ -51,7 +51,7 @@ function CartContent() {
     <div className={styles.container}>
       <h2 className={styles.cartHeader}>{t('cart')}</h2>
 
-      {items.length < 1 ? <p>{t('cartIsEmpty')}</p> : content}
+      {!items.length ? <p>{t('cartIsEmpty')}</p> : content}
     </div>
   );
 }

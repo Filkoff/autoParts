@@ -51,6 +51,7 @@ function CartPopup({ showPopup, setShowPopup }) {
                 onClick={() => setShowPopup(false)}
                 color="primary"
                 variant="contained"
+                size="small"
               >
                 {t('more')}
               </Button>

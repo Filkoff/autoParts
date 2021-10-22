@@ -1,16 +1,14 @@
+@import '../../../styles/breakpoints';
 .tabs {
   width: 150px;
   flex-shrink: 0;
-  height: 100vh;
 }
 .container {
   margin: 0 auto;
   max-width: 1600px;
-  padding-top: 100px;
-  height: 100vh;
 }
 
-@media (max-width: 576px) {
+@media (max-width: $sm) {
   .tabs {
     width: 100px;
   }

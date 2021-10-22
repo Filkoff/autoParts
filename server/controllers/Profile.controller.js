@@ -14,8 +14,8 @@ module.exports = {
         name: client.name,
         description: client.description,
       });
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.error(err);
     }
   },
 
@@ -32,16 +32,16 @@ module.exports = {
         name: client.name,
         description: client.description,
       });
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.error(err);
     }
   },
 
   async setAddress(req, res) {
     try {
       res.status(200).send('Address was added');
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.error(err);
     }
   },
 };

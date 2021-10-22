@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 function Order({ order, children }) {
   const { t } = useTranslation();
   return (
-    <div className={styles.order}>
+    <div id="order" className={styles.order}>
       <div className={styles.orderBlock}>
         <div className={styles.mainInfo}>
           <h3>

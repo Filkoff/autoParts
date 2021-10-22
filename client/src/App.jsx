@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Header from './components/header/Header/Header';
+import Footer from './components/Footer/Footer';
 import styles from './App.module.scss';
 import { auth } from './actions/user';
 import { ThemeProvider } from '@material-ui/core';
 import { getAllDealerParts } from './actions/dealer';
 import { theme } from './styles/theme';
-import { privateRoutes, publicRoutes } from './router/routes';
 import { searchParts } from './actions/search';
+import AppRouter from './router/AppRouter';
 
 function App() {
-  const isAuth = useSelector((state) => state.user.isAuth);
   const dispatch = useDispatch();
   const reloadingData = () => {
     dispatch(auth());
@@ -30,35 +30,9 @@ function App() {
           <div className={styles.app}>
             <Header />
             <div className={styles.mainContent}>
-              {isAuth ? (
-                <Switch>
-                  {privateRoutes.map((route) => (
-                    <Route
-                      key={route.path}
-                      component={route.component}
-                      path={route.path}
-                      exact={route.exact}
-                    />
-                  ))}
-                  <Redirect to="/main" />
-                </Switch>
-              ) : (
-                <Redirect to="/login" />
-              )}
-
-              {
-                <Switch>
-                  {publicRoutes.map((route) => (
-                    <Route
-                      key={route.path}
-                      component={route.component}
-                      path={route.path}
-                      exact={route.exact}
-                    />
-                  ))}
-                </Switch>
-              }
+              <AppRouter />
             </div>
+            <Footer />
           </div>
         </BrowserRouter>
       </ThemeProvider>

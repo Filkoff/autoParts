@@ -1,5 +1,6 @@
+@import '../../../styles/colors';
 a {
-  color: rgb(14, 33, 204);
+  color: $blue;
 }
 .container {
   margin: 100px auto;

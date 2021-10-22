@@ -37,6 +37,7 @@ const Header = () => {
           </div>
           <div className={styles.lang}>
             <NativeSelect
+              value={i18n.language}
               size="small"
               variant="standard"
               onChange={(e) => changeLanguage(e.target.value)}

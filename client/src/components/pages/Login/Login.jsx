@@ -34,7 +34,7 @@ function Login() {
 
   return (
     <div className={styles.container}>
-      <img src="/assets/images/Lada.png" alt="logo" />
+      <img className={styles.image} src="/assets/images/Lada.png" alt="logo" />
       <div>
         <Container maxWidth="xs">
           <DialogTitle id="form-dialog-title" fontSize="large">

@@ -7,7 +7,7 @@ import { API_URL } from '../../../../config';
 import CreateIcon from '@material-ui/icons/Create';
 import styles from './ProfileInfo.module.scss';
 import MapWindow from '../../../Map/MapWindow';
-import Modal from '../../../Modal/ModalWindow';
+import LocationModal from '../../../Modal/ModalWindow';
 import {
   changeDescription,
   changeName,
@@ -35,9 +35,10 @@ function ProfileInfo() {
   }
 
   const nameInfo = (
-    <div className={styles.name}>
+    <div id="userName" className={styles.name}>
       <b> {t('name')}:</b> {currentUser.name}
       <CreateIcon
+        id="nameEditIcon"
         className={styles.createIcon}
         fontSize={'small'}
         color="disabled"
@@ -49,6 +50,7 @@ function ProfileInfo() {
   const changingNameInfo = (
     <div>
       <TextField
+        id="nameInput"
         className={styles.nameInfo}
         type="text"
         value={name}
@@ -72,11 +74,12 @@ function ProfileInfo() {
   );
 
   const descriptionInfo = (
-    <div className={styles.description}>
+    <div id="userDescription" className={styles.description}>
       <b>{t('additInfo')}: </b>
       <p>
         {currentUser.description}
         <CreateIcon
+          id="descriptionEditIcon"
           className={styles.createIcon}
           fontSize="small"
           color="disabled"
@@ -89,6 +92,7 @@ function ProfileInfo() {
   const changingDescriptionInfo = (
     <div>
       <TextField
+        id="descriptionInput"
         className={styles.descriptionInfo}
         variant="outlined"
         multiline
@@ -116,7 +120,9 @@ function ProfileInfo() {
 
   return (
     <div className={styles.infoContainer}>
-      <h2 className={styles.heading}>{t('profile')}</h2>
+      <h2 id="profileHeading" className={styles.heading}>
+        {t('profile')}
+      </h2>
       <div className={styles.personalInfo}>
         <div>
           <div className={styles.button}>
@@ -135,6 +141,7 @@ function ProfileInfo() {
             </label>
           </div>
           <Button
+            size="small"
             variant="outlined"
             color="secondary"
             disabled={avatar === avatarLogo ? true : false}
@@ -145,6 +152,7 @@ function ProfileInfo() {
           <div className={styles.menu}>
             <Button
               className={styles.button}
+              size="small"
               variant="contained"
               color="primary"
               onClick={() => setIsModalShown(true)}
@@ -168,7 +176,7 @@ function ProfileInfo() {
               {addr ? ` ${addr}` : ` ${t('specifyLocation')}`}
             </p>
           </div>
-          <Modal show={isModalShown} setShow={setIsModalShown}>
+          <LocationModal show={isModalShown} setShow={setIsModalShown}>
             <h3 className={styles.heading}> {t('chooseLocation')}</h3>
 
             <MapWindow />
@@ -182,7 +190,7 @@ function ProfileInfo() {
             >
               {t('save')}
             </Button>
-          </Modal>
+          </LocationModal>
         </div>
       </div>
     </div>

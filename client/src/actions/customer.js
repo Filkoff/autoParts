@@ -5,8 +5,8 @@ import { BASE_URL } from '../consts/baseURL';
 export const setDeliveryData = (data) => {
   return async (dispatch) => {
     try {
-      await axios.post(BASE_URL + 'user/delivery-data', {
-        data,
+      await axios.post(BASE_URL + 'user/delivery-data', data, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       dispatch(setDeliveryData({ data }));
     } catch (e) {

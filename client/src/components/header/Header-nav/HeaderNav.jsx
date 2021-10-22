@@ -33,6 +33,7 @@ const HeaderNav = () => {
         <div className={styles.iconContainer}>
           <NavLink to="/chat">
             <CommentIcon
+              id="chatIcon"
               fontSize="large"
               className={styles.commentIcon}
               onClick={() => dispatch(clearCurrentPerson())}
@@ -52,6 +53,7 @@ const HeaderNav = () => {
         </div>
 
         <Button
+          id="logOutButton"
           size="small"
           variant="outlined"
           className={styles.headerButton}

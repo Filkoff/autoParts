@@ -26,7 +26,12 @@ export default function SinglePart({
         </p>
       </div>
       <NavLink to={`/dealer/parts/add/${id}`}>
-        <Button className={styles.button} variant="contained" color="primary">
+        <Button
+          id="selectButton"
+          className={styles.button}
+          variant="contained"
+          color="primary"
+        >
           {t('select')}
         </Button>
       </NavLink>

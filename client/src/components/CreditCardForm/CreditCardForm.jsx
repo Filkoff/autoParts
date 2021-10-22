@@ -16,6 +16,7 @@ function CreditCardForm() {
         <div className={styles.formDiv}>
           <div className={styles.creditCard}>
             <Cards
+              className={styles.creditCardImage}
               cvc={values.cardSecurityCode}
               expiry={values.cardExpiration}
               focused={values.focus}

@@ -8,14 +8,14 @@ module.exports = {
       (err, jsonString) => {
         if (err) {
           res.status(404);
-          console.log(err);
+          console.error(err);
           return;
         }
         try {
           const parts = JSON.parse(jsonString);
           res.status(200).send(parts);
         } catch (err) {
-          console.log(err);
+          console.error(err);
           res.status(404);
         }
       }
@@ -26,7 +26,7 @@ module.exports = {
     try {
       res.status(200).send({ message: 'part was deleted' });
     } catch (err) {
-      console.log(err);
+      console.error(err);
       res.status(404);
     }
   },
@@ -35,7 +35,7 @@ module.exports = {
     try {
       res.status(200).send({ message: 'part was updated' });
     } catch (err) {
-      console.log(err);
+      console.error(err);
       res.status(404);
     }
   },
@@ -44,7 +44,7 @@ module.exports = {
     try {
       res.status(200).send({ message: 'part was added' });
     } catch (err) {
-      console.log(err);
+      console.error(err);
       res.status(404);
     }
   },
@@ -56,14 +56,14 @@ module.exports = {
       (err, jsonString) => {
         if (err) {
           res.status(404);
-          console.log(err);
+          console.error(err);
           return;
         }
         try {
           const parts = JSON.parse(jsonString);
           res.status(200).send(parts);
         } catch (err) {
-          console.log(err);
+          console.error(err);
           res.status(404);
         }
       }

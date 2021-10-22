@@ -17,9 +17,11 @@ import { CATEGORIES } from '../../consts/partsCatrgories';
 import { useTranslation } from 'react-i18next';
 
 function Search() {
-  const [category, setCategory] = useState('');
-  const [model, setModel] = useState('');
-  const [name, setName] = useState('');
+  const [searchData, setSearchData] = useState({
+    category: '',
+    model: '',
+    name: '',
+  });
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const [value, setValue] = useState(0);
@@ -36,7 +38,9 @@ function Search() {
         variant="contained"
         color="primary"
         onClick={() => {
-          dispatch(searchParts(category, model, name));
+          dispatch(
+            searchParts(searchData.category, searchData.model, searchData.name)
+          );
         }}
       >
         {t('searchButton')}
@@ -67,7 +71,10 @@ function Search() {
           <div className={styles.label}>{t('category')}:</div>
           <NativeSelect
             id="category"
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={(e) =>
+              setSearchData({ ...searchData, category: e.target.value })
+            }
+            value={searchData.category}
             className={styles.input1}
           >
             <option value=""></option>
@@ -86,9 +93,11 @@ function Search() {
             id="model"
             className={styles.input}
             variant="outlined"
-            value={model}
+            value={searchData.model}
             type="text"
-            onChange={(e) => setModel(e.target.value)}
+            onChange={(e) =>
+              setSearchData({ ...searchData, model: e.target.value })
+            }
           />
         </div>
         <div className={styles.singleSearch}>
@@ -97,9 +106,11 @@ function Search() {
             className={styles.input}
             variant="outlined"
             id="name"
-            value={name}
+            value={searchData.name}
             type="text"
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) =>
+              setSearchData({ ...searchData, name: e.target.value })
+            }
           />
         </div>
         {value === 0 && searchButton}

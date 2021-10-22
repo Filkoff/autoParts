@@ -12,17 +12,17 @@ function ChatPage() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const chats = useSelector((state) => state.chat.chats);
-  const person = chats.find((item) => item.id === id);
-  if (person) {
-    dispatch(setCurrentPerson(person.id, person.person));
+  const chat = chats.find((item) => item.id === id);
+  if (chat) {
+    dispatch(setCurrentPerson(chat.id, chat.person));
   }
   return (
     <div className={styles.container}>
-      <SideChat />
+      <SideChat chats={chats} />
       <div className={styles.messagesContainer}>
         <MessagesHeader />
         <div className={styles.messages}>
-          <MessagesContainer />
+          <MessagesContainer chats={chats} chat={chat} />
           <Input />
         </div>
       </div>

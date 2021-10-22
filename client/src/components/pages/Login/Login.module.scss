@@ -1,7 +1,10 @@
+@import '../../../styles/breakpoints';
 button.button {
   margin: 15px;
 }
 
-.container {
-  padding-top: 100px;
+@media (max-width: $sm) {
+  .image {
+    max-width: 300px;
+  }
 }

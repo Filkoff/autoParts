@@ -17,7 +17,6 @@ import Registration from '../components/pages/Registration/Registration';
 import PartsList from '../components/searchParts/PartsList/PartsList';
 import AddPart from '../components/templates/AddPart/AddPart';
 import PartsSet from '../components/templates/PartsSet/PartsSet';
-import ErrorPage from '../components/pages/ErrorPage/ErrorPage';
 
 export const publicRoutes = [
   {
@@ -31,6 +30,21 @@ export const publicRoutes = [
     exact: true,
   },
   {
+    path: '/search',
+    component: PartsList,
+    exact: true,
+  },
+  {
+    path: '/compare',
+    component: CompareParts,
+    exact: true,
+  },
+  {
+    path: '/compare/:id',
+    component: CompareResult,
+    exact: true,
+  },
+  {
     path: '/registration',
     component: Registration,
     exact: true,
@@ -40,6 +54,25 @@ export const publicRoutes = [
     component: Login,
     exact: true,
   },
+  {
+    path: '/dealer/profile',
+    component: DealerInfo,
+    exact: true,
+  },
+];
+
+export const privateRoutes = [
+  {
+    path: '/',
+    component: MainPage,
+    exact: true,
+  },
+  {
+    path: '/main',
+    component: MainPage,
+    exact: true,
+  },
+
   {
     path: '/search',
     component: PartsList,
@@ -60,14 +93,6 @@ export const publicRoutes = [
     component: DealerInfo,
     exact: true,
   },
-  {
-    path: '/error',
-    component: ErrorPage,
-    exact: true,
-  },
-];
-
-export const privateRoutes = [
   {
     path: '/profile/:page',
     component: Profile,

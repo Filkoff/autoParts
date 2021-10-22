@@ -20,7 +20,9 @@ function CartIcon() {
         fontSize="large"
       />
       <div className={styles.cartLabel}>
-        <div className={styles.itemsAmount}>{amount}</div>
+        <div id="itemsAmount" className={styles.itemsAmount}>
+          {amount}
+        </div>
       </div>
       <CartPopup showPopup={isVisible} setShowPopup={setIsVisible} />
     </div>

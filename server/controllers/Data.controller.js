@@ -8,14 +8,14 @@ module.exports = {
       (err, jsonString) => {
         if (err) {
           res.status(404).send(err.message);
-          console.log(err);
+          console.error(err);
           return;
         }
         try {
           const models = JSON.parse(jsonString);
           res.status(200).send(models);
         } catch (err) {
-          console.log(err);
+          console.error(err);
           res.status(404).send(err.message);
         }
       }
@@ -28,14 +28,14 @@ module.exports = {
       (err, jsonString) => {
         if (err) {
           res.status(404);
-          console.log(err);
+          console.error(err);
           return;
         }
         try {
           const parts = JSON.parse(jsonString);
           res.status(200).send(parts);
         } catch (err) {
-          console.log(err);
+          console.error(err);
           res.status(404);
         }
       }
@@ -49,14 +49,14 @@ module.exports = {
       (err, jsonString) => {
         if (err) {
           res.status(404);
-          console.log(err);
+          console.error(err);
           return;
         }
         try {
           const parts = JSON.parse(jsonString);
           res.status(200).send(parts);
         } catch (err) {
-          console.log(err);
+          console.error(err);
           res.status(404);
         }
       }

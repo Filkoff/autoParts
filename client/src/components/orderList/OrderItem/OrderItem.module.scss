@@ -1,3 +1,5 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
 .image {
   max-width: 150px;
   max-height: 150px;
@@ -5,7 +7,7 @@
 }
 
 .order {
-  border: 1px solid rgb(148, 141, 141);
+  border: 1px solid $bg-gray;
   margin: 50px;
   border-radius: 10px;
 }
@@ -18,18 +20,12 @@
   flex-wrap: wrap;
 }
 
-.itemInfo {
-  width: 400px;
-}
 .name {
   text-transform: uppercase;
   font-weight: 700;
 }
-@media (max-width: 576px) {
+@media (max-width: $sm) {
   .item {
     flex-direction: column;
-  }
-  .itemInfo {
-    width: 200px;
   }
 }

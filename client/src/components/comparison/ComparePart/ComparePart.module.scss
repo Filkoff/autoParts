@@ -1,5 +1,6 @@
+@import '../../../styles/colors';
 .card {
-  border: 1px solid #4e4b4b;
+  border: 1px solid $bg-gray;
   border-radius: 5px;
   width: 300px;
   margin: 20px;

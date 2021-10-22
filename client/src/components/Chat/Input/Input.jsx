@@ -43,8 +43,9 @@ function Input() {
               className={styles.button}
               color="primary"
               type="submit"
+              size="small"
             >
-              <SendIcon />
+              <SendIcon fontSize="small" />
             </Button>
           </div>
         </form>

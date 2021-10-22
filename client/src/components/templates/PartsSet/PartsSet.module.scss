@@ -1,3 +1,4 @@
+@import '../../../styles/breakpoints';
 .partsField {
   display: flex;
   flex-wrap: wrap;
@@ -15,8 +16,8 @@
 button.button {
   margin: 50px 0;
 }
-@media (max-width: 576px) {
+@media (max-width: $sm) {
   .container {
-    padding: 0 10px;
+    padding: 0 5px;
   }
 }

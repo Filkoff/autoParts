@@ -1,9 +1,11 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
 .message {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: fit-content;
-  background-color: #ffbf33;
+  background-color: $bg-main;
   padding: 5px;
   margin: 10px;
   border-radius: 10px;
@@ -17,6 +19,12 @@
 
 .messageTime {
   font-size: 10px;
-  color: grey;
+  color: $medium-gray;
   text-align: right;
+}
+
+@media (max-width: $sm) {
+  .messageTime {
+    font-size: 8px;
+  }
 }

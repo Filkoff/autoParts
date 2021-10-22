@@ -1,14 +1,15 @@
+@import '../../../styles/colors';
 .image {
   max-width: 150px;
   max-height: 150px;
 }
 
 .dealer {
-  border-top: 1px solid rgb(200, 200, 200);
-  border-bottom: 1px solid rgb(200, 200, 200);
-  background-color: #ffffff;
+  border-top: 1px solid $border-gray;
+  border-bottom: 1px solid $border-gray;
+  background-color: $bg-white;
   max-width: 1140px;
-  margin: 0 auto;
+  margin: 10px;
 }
 .dealerName {
   text-align: left;
@@ -17,6 +18,6 @@
 .orderButtonContainer {
   margin: 10px;
 }
-.orderButton {
-  margin: 5px;
+button.orderButton {
+  margin: 10px;
 }

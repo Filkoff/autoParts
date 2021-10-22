@@ -9,14 +9,14 @@ module.exports = {
       (err, jsonString) => {
         if (err) {
           res.status(404);
-          console.log(err);
+          console.error(err);
           return;
         }
         try {
           const customer = JSON.parse(jsonString);
           res.status(200).send(customer);
         } catch (err) {
-          console.log(err);
+          console.error(err);
           res.status(404);
         }
       }
@@ -30,7 +30,7 @@ module.exports = {
       (err, jsonString) => {
         if (err) {
           res.status(404);
-          console.log(err);
+          console.error(err);
           return;
         }
         try {
@@ -46,7 +46,7 @@ module.exports = {
           );
           res.status(200).send(sortedParts);
         } catch (err) {
-          console.log(err);
+          console.error(err);
           res.status(404);
         }
       }

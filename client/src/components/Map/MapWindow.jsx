@@ -86,11 +86,7 @@ function MapWindow() {
     ymaps.ready(init);
   }, []);
 
-  return (
-    <>
-      <div id="map" className={styles.map}></div>
-    </>
-  );
+  return <div id="map" className={styles.map}></div>;
 }
 
 export default MapWindow;

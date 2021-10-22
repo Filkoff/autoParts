@@ -38,6 +38,12 @@ function Profile() {
     setSelectedTab(newValue);
   };
 
+  const handleOrdersList = () => {
+    currentUser.type === 'dealer'
+      ? dispatch(dealerOrders(currentUser.id))
+      : dispatch(customerOrders(currentUser.id));
+  };
+
   return (
     <div className={styles.container}>
       <Box
@@ -45,7 +51,6 @@ function Profile() {
           flexGrow: 1,
           bgcolor: 'background.paper',
           display: 'flex',
-          height: 400,
         }}
       >
         <Tabs
@@ -60,27 +65,24 @@ function Profile() {
             borderColor: 'divider',
           }}
         >
-          <Tab label={t('mainInfo')} />
+          <Tab id="mainInfo" label={t('mainInfo')} />
           {currentUser.type === 'dealer' ? (
             <Tab
+              id="myParts"
               component={Link}
               label={t('myParts')}
               onClick={() => dispatch(getAllDealerParts())}
             />
           ) : null}
           {currentUser.type === 'dealer' ? (
-            <Tab label={t('addPart')} component={Link} />
+            <Tab id="addPart" label={t('addPart')} component={Link} />
           ) : null}
 
           <Tab
             id="ordersTab"
             value={3}
             label={t('myOrders')}
-            onClick={() => {
-              currentUser.type === 'dealer'
-                ? dispatch(dealerOrders(currentUser.id))
-                : dispatch(customerOrders(currentUser.id));
-            }}
+            onClick={handleOrdersList}
           />
         </Tabs>
         {selectedTab === 0 && <ProfileInfo />}

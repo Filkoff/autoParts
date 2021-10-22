@@ -1,5 +1,7 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
 .card {
-  border: 1px solid #4e4b4b;
+  border: 1px solid $bg-gray;
   border-radius: 5px;
   width: 300px;
   margin: 20px;
@@ -20,7 +22,7 @@ button.button {
   font-weight: 700;
   text-transform: uppercase;
 }
-@media (max-width: 576px) {
+@media (max-width: $sm) {
   .card {
     max-width: 200px;
     margin: 5px;

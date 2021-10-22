@@ -46,21 +46,22 @@ export default function Part({
   };
 
   const addToCart = () => {
-    !isAuth
-      ? setIsModalShown(true)
-      : dispatch(
-          addItem({
-            id,
-            category,
-            name,
-            description,
-            models,
-            price,
-            dealer,
-            condition,
-            img,
-          })
-        );
+    {
+      !isAuth ? setIsModalShown(true) : null;
+    }
+    dispatch(
+      addItem({
+        id,
+        category,
+        name,
+        description,
+        models,
+        price,
+        dealer,
+        condition,
+        img,
+      })
+    );
   };
 
   return (
@@ -90,7 +91,7 @@ export default function Part({
           {t('price')}: {price}
           {t('currency')}
         </p>
-        {isModalShown ? <ModalLogin /> : null}
+        {isModalShown ? <ModalLogin setIsModalShown={setIsModalShown} /> : null}
         <Button
           id="addToCartButton"
           className={styles.button}

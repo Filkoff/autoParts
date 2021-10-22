@@ -1,3 +1,6 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
+
 .container {
   display: flex;
   margin: 20px;
@@ -6,12 +9,12 @@
   border-radius: 5px;
   transition: 0.3s;
   text-align: left;
-  color: #000000;
-  background-color: #f3f2f2;
+  color: $black;
+  background-color: $light-gray;
 }
 
 .container:hover {
-  background-color: rgb(211, 238, 211);
+  background-color: $light-green;
 }
 .avatarContainer {
   display: flex;
@@ -31,6 +34,22 @@
 }
 .messageTime {
   font-size: 10px;
-  color: grey;
+  color: $medium-gray;
   text-align: right;
+}
+
+@media (max-width: $sm) {
+  .container {
+    padding: 5px;
+    margin: 5px;
+  }
+  .messageTime {
+    font-size: 8px;
+  }
+  .message {
+    max-width: 100px;
+  }
+  .avatar {
+    display: none;
+  }
 }

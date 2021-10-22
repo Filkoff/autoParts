@@ -1,14 +1,16 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
 .iconContainer {
   display: flex;
   position: relative;
   margin: 0 10px;
 }
 .cartLabel {
-  background: #ff4c14;
+  background: $red;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  color: #fff;
+  color: $bg-white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,9 +26,9 @@
 }
 
 .icon {
-  color: #000000;
+  color: $black;
 }
-@media (max-width: 576px) {
+@media (max-width: $sm) {
   .iconContainer {
     margin: 5px;
   }

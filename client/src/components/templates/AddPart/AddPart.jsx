@@ -10,8 +10,8 @@ import shortid from 'shortid';
 function AddPart() {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const dealerParts = useSelector((state) => state.dealer.result);
-  const currentPartArr = dealerParts.filter((item) => item.id === id);
+  const parts = useSelector((state) => state.parts.result);
+  const currentPartArr = parts.filter((item) => item.id === id);
   const currentPart = currentPartArr[0];
   const category = currentPart.category;
   const name = currentPart.name;
@@ -80,6 +80,7 @@ function AddPart() {
         <div className={styles.info}>
           <b>{t('description')}: </b>
           <Input
+            id="description"
             className={styles.description}
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -90,7 +91,10 @@ function AddPart() {
         </div>
         <div className={styles.info}>
           <b>{t('condition')}: </b>
-          <NativeSelect onChange={(e) => setCondition(e.target.value)}>
+          <NativeSelect
+            id="condition"
+            onChange={(e) => setCondition(e.target.value)}
+          >
             <option value={''}></option>
             <option value={'новая'}>{t('new')}</option>
             <option value={'б/у'}>{t('used')}</option>
@@ -99,6 +103,7 @@ function AddPart() {
         <div className={styles.info}>
           <b>{t('price')}: </b>
           <Input
+            id="price"
             type="number"
             value={price}
             onChange={(e) => setPrice(Number(e.target.value))}
@@ -107,12 +112,14 @@ function AddPart() {
         <div className={styles.info}>
           <b>{t('production')}: </b>
           <Input
+            id="production"
             value={production}
             onChange={(e) => setProduction(e.target.value)}
           />
         </div>
         <NavLink to="/profile/myParts">
           <Button
+            id="addPartButton"
             className={styles.button}
             variant="contained"
             color="primary"

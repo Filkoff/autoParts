@@ -1,18 +1,19 @@
+@import '../../styles/colors';
+@import '../../styles/breakpoints';
 .container {
   max-width: 1200px;
-  margin: 100px auto;
+  margin: 0 auto;
 }
 
 .form {
   max-width: 300px;
-  margin: 0 auto;
+  margin: 10px;
 }
 .input {
   margin: 20px;
 }
 
 .formContainer {
-  margin-top: 10%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -22,7 +23,7 @@
   width: 400px;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: -1px 8px 15px 0px rgba(0, 0, 0, 0.44);
+  box-shadow: -1px 8px 15px 0 $bg-transparent;
 }
 
 .alert {
@@ -32,4 +33,14 @@
 
 .creditCard {
   margin-bottom: 10%;
+}
+@media (max-width: $sm) {
+  .formDiv {
+    padding: 30px 10px;
+    max-width: 310px;
+  }
+
+  div.creditCard {
+    max-width: 220px;
+  }
 }

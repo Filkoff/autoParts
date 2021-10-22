@@ -1,3 +1,5 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
 .headerIconsContainer {
   display: flex;
   align-items: center;
@@ -24,10 +26,10 @@ a {
   text-decoration: none;
 }
 .commentIcon {
-  color: #000000;
+  color: $black;
 }
 
-@media (max-width: 576px) {
+@media (max-width: $sm) {
   .iconContainer {
     margin: 5px;
   }

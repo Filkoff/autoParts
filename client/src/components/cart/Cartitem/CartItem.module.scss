@@ -1,3 +1,5 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
 .container {
   padding-top: 100px;
   margin: 0 auto;
@@ -7,8 +9,8 @@
   padding: 30px 0;
   display: flex;
   align-items: center;
-  border-top: 1px solid rgb(200, 200, 200);
-  border-bottom: 1px solid rgb(200, 200, 200);
+  border-top: 1px solid $border-gray;
+  border-bottom: 1px solid $border-gray;
   position: relative;
 }
 
@@ -38,9 +40,10 @@
 .amountHandler {
   width: 20px;
 }
-@media (max-width: 700px) {
+@media (max-width: $md) {
   .row {
     flex-direction: column;
+    padding: 10px 0 0 0;
   }
   .ceil {
     flex-basis: 40px;

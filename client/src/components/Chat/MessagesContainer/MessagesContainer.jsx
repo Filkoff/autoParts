@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux';
 import Message from '../Message/Message';
 import styles from './MessagesContainer.module.scss';
 import shortid from 'shortid';
+import PropTypes from 'prop-types';
 
-function MessagesContainer() {
-  const chats = useSelector((state) => state.chat.chats);
+function MessagesContainer({ chats }) {
   const current = useSelector((state) => state.chat.currentPerson);
   const currentChat = chats.find((item) => item.person === current.name);
   return (
@@ -20,5 +20,9 @@ function MessagesContainer() {
     </div>
   );
 }
+
+MessagesContainer.propTypes = {
+  chats: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default MessagesContainer;

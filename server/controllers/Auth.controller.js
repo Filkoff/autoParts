@@ -67,6 +67,7 @@ module.exports = {
           type: req.body.type,
           name: req.body.name,
           registratedAt: new Date(),
+          description: '',
         });
         res.status(201).send(user);
       }
@@ -99,7 +100,7 @@ module.exports = {
         },
       });
     } catch (error) {
-      console.log(error);
+      console.error(error);
       res.send({ message: 'Server error' });
     }
   },
