@@ -4,7 +4,6 @@ import { BASE_URL } from '../consts/baseURL';
 
 export const searchParts = (category = '', model = '', name = '') => {
   return async (dispatch) => {
-    console.log('dis:', category, model, name);
     try {
       const response = await axios.post(BASE_URL + 'dealers/parts/all', {
         category,

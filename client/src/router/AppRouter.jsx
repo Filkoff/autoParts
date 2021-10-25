@@ -4,7 +4,6 @@ import { privateRoutes, publicRoutes } from './routes';
 import { Switch, Route, Redirect } from 'react-router-dom';
 function AppRouter() {
   const isAuth = useSelector((state) => state.user.isAuth);
-  console.log('isAuth:', isAuth);
   return isAuth ? (
     <Switch>
       {privateRoutes.map((route) => (
