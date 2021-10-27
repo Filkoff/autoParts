@@ -12,7 +12,7 @@ import { registration } from '../../../actions/user';
 import { NavLink, useHistory } from 'react-router-dom';
 import styles from './Registration.module.scss';
 import { useTranslation } from 'react-i18next';
-import useValidation from '../../../utils/useValidation';
+import useEmailValidation from '../../../customHooks/useEmailValidation';
 
 const Registration = () => {
   const [email, setEmail] = useState('');
@@ -20,7 +20,7 @@ const Registration = () => {
   const [type, setType] = useState('customer');
   const [name, setName] = useState('');
   const { t } = useTranslation();
-  const [isEmailCorrect, errorText] = useValidation(email);
+  const [isEmailCorrect, errorText] = useEmailValidation(email);
   const [isInputChanged, setIsInputChanged] = useState(false);
   const router = useHistory();
   const handleBlur = () => {

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { deleteDealerPart } from '../../../../actions/dealer';
 import styles from './DealerPart.module.scss';
 import { useTranslation } from 'react-i18next';
-import PropTypes from 'prop-types';
+import { string, number } from 'prop-types';
 
 function DealerPart({
   id,
@@ -67,14 +67,14 @@ function DealerPart({
 }
 
 DealerPart.propTypes = {
-  id: PropTypes.string,
-  category: PropTypes.string,
-  name: PropTypes.string,
-  description: PropTypes.string,
-  models: PropTypes.string,
-  img: PropTypes.string,
-  condition: PropTypes.string,
-  price: PropTypes.number,
+  id: string,
+  category: string,
+  name: string,
+  description: string,
+  models: string,
+  img: string,
+  condition: string,
+  price: number,
 };
 
 export default DealerPart;

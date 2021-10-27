@@ -1,29 +1,32 @@
 /* global describe, cy, it */
 
-const customerName = 'john';
-const customerMail = 'donavan1@gmail.com';
-const customerPassword = '4567bnj';
-const dealerName = 'jack';
-const dealerMail = 'dealer@gmail.com';
-const dealerPassword = '123456';
-describe('Main functionality', () => {
-  it('Register', () => {
+const CUSTOMER_NAME = 'john';
+const CUSTOMER_MAIL = 'donavan1@gmail.com';
+const CUSTOMER_PASSWORD = '4567bnj';
+const DEALER_NAME = 'jack';
+const DEALER_MAIL = 'dealer@gmail.com';
+const DEALER_PASSWORD = '123456';
+
+describe('Authorization', () => {
+  it('Register user', () => {
     cy.visit('/registration');
-    cy.get('#name').type(customerName);
-    cy.get('#email').type(customerMail);
-    cy.get('#password').type(customerPassword);
+    cy.get('#name').type(CUSTOMER_NAME);
+    cy.get('#email').type(CUSTOMER_MAIL);
+    cy.get('#password').type(CUSTOMER_PASSWORD);
     cy.get('#type').select('customer');
     cy.get('#registrationButton').click();
   });
   it('Log in', () => {
     cy.visit('/login');
-    cy.get('#email').type(customerMail);
-    cy.get('#password').type(customerPassword);
+    cy.get('#email').type(CUSTOMER_MAIL);
+    cy.get('#password').type(CUSTOMER_PASSWORD);
     cy.get('#login').click();
     cy.get('#userAvatar').click({ force: true });
     cy.get('#profileHeading');
   });
+});
 
+describe('Profile functionality', () => {
   it('Change personal data', () => {
     cy.get('#nameEditIcon').click();
     cy.get('#nameInput')
@@ -41,8 +44,15 @@ describe('Main functionality', () => {
     cy.get('#changeDescriptionButton').click();
     cy.get('#userDescription').contains('New user');
   });
+  it('Get history of your orders', () => {
+    cy.get('#userAvatar').click();
+    cy.get('#ordersTab').click();
+    cy.get('.Order_order__2fmsX').should('have.length', 2);
+  });
+});
 
-  it('Search parts', () => {
+describe('Search and compare parts', () => {
+  it('Get result of parts searching', () => {
     cy.visit('/main');
     cy.get('#category').select('ВЫПУСКНАЯ СИСТЕМА');
     cy.get('#model').type('vesta');
@@ -50,7 +60,7 @@ describe('Main functionality', () => {
     cy.get('#searchButton').click();
     cy.get('.Part_card__35JVk').should('have.length', 21);
   });
-  it('Sort by distance', () => {
+  it('Sort search results by distance', () => {
     cy.visit('/main', {
       onBeforeLoad(win) {
         const latitude = 54.302903;
@@ -70,8 +80,7 @@ describe('Main functionality', () => {
     cy.get('.Part_card__35JVk').first().contains('Paul');
     cy.get('.Part_card__35JVk').last().contains('Mark');
   });
-
-  it('Compare', () => {
+  it('Compare parts of the same type', () => {
     cy.visit('/main');
     cy.get('#compareTab').click();
     cy.get('#category').select('ПОДВЕСКА');
@@ -84,11 +93,60 @@ describe('Main functionality', () => {
       .first()
       .contains('пружина');
   });
+});
 
+describe('Handle dealer parts', () => {
+  it('Add dealer part', () => {
+    cy.get('#logOutButton').click();
+    cy.visit('/registration');
+    cy.get('#name').type(DEALER_NAME);
+    cy.get('#email').type(DEALER_MAIL);
+    cy.get('#password').type(DEALER_PASSWORD);
+    cy.get('#type').select('dealer');
+    cy.get('#registrationButton').click();
+    cy.visit('/login');
+    cy.get('#email').type(DEALER_MAIL);
+    cy.get('#password').type(DEALER_PASSWORD);
+    cy.get('#login').click();
+    cy.get('#userAvatar').click({ force: true });
+    cy.get('#addPart').click();
+    cy.get('#selectButton').first().click();
+    cy.get('#description').type('Длина - 325мм');
+    cy.get('#condition').select('новая');
+    cy.get('#price').clear().type('102030');
+    cy.get('#production').type('KYB');
+    cy.get('#addPartButton').click();
+    cy.get('.DealerPart_info__8ksUP').contains('102030');
+  });
+  it('Change dealer part', () => {
+    cy.visit('/login');
+    cy.get('#email').type(DEALER_MAIL);
+    cy.get('#password').type(DEALER_PASSWORD);
+    cy.get('#login').click();
+    cy.get('#userAvatar').click({ force: true });
+    cy.get('#myParts').click();
+    cy.get('#changeButton').first().click();
+    cy.get('#price').clear().type('99999');
+    cy.get('#saveButton').click();
+    cy.get('.DealerPart_info__8ksUP').contains('99999');
+  });
+  it('Delete dealer part', () => {
+    cy.visit('/login');
+    cy.get('#email').type(DEALER_MAIL);
+    cy.get('#password').type(DEALER_PASSWORD);
+    cy.get('#login').click();
+    cy.get('#userAvatar').click({ force: true });
+    cy.get('#myParts').click();
+    cy.get('#deleteButton').click();
+    cy.get('.DealerPart_card__1XsNP').should('have.length', 20);
+  });
+});
+
+describe('Make order', () => {
   it('Order item', () => {
     cy.visit('/login');
-    cy.get('#email').type(customerMail);
-    cy.get('#password').type(customerPassword);
+    cy.get('#email').type(CUSTOMER_MAIL);
+    cy.get('#password').type(CUSTOMER_PASSWORD);
     cy.get('#login').click();
     cy.get('#category').select('ВЫПУСКНАЯ СИСТЕМА');
     cy.get('#model').type('vesta');
@@ -114,56 +172,9 @@ describe('Main functionality', () => {
     cy.get('#itemsAmount').should('have.text', '0');
     cy.get('#successOrderMessage');
   });
-  it('Get your orders', () => {
-    cy.get('#userAvatar').click();
-    cy.get('#ordersTab').click();
-    cy.get('.Order_order__2fmsX').should('have.length', 2);
-  });
-  it('Add part', () => {
-    cy.get('#logOutButton').click();
-    cy.visit('/registration');
-    cy.get('#name').type(dealerName);
-    cy.get('#email').type(dealerMail);
-    cy.get('#password').type(dealerPassword);
-    cy.get('#type').select('dealer');
-    cy.get('#registrationButton').click();
-    cy.visit('/login');
-    cy.get('#email').type(dealerMail);
-    cy.get('#password').type(dealerPassword);
-    cy.get('#login').click();
-    cy.get('#userAvatar').click({ force: true });
-    cy.get('#addPart').click();
-    cy.get('#selectButton').first().click();
-    cy.get('#description').type('Длина - 325мм');
-    cy.get('#condition').select('новая');
-    cy.get('#price').clear().type('102030');
-    cy.get('#production').type('KYB');
-    cy.get('#addPartButton').click();
-    cy.get('.DealerPart_info__8ksUP').contains('102030');
-  });
-  it('Change part', () => {
-    cy.visit('/login');
-    cy.get('#email').type(dealerMail);
-    cy.get('#password').type(dealerPassword);
-    cy.get('#login').click();
-    cy.get('#userAvatar').click({ force: true });
-    cy.get('#myParts').click();
-    cy.get('#changeButton').first().click();
-    cy.get('#price').clear().type('99999');
-    cy.get('#saveButton').click();
-    cy.get('.DealerPart_info__8ksUP').contains('99999');
-  });
-  it('Delete part', () => {
-    cy.visit('/login');
-    cy.get('#email').type(dealerMail);
-    cy.get('#password').type(dealerPassword);
-    cy.get('#login').click();
-    cy.get('#userAvatar').click({ force: true });
-    cy.get('#myParts').click();
-    cy.get('#deleteButton').click();
-    cy.get('.DealerPart_card__1XsNP').should('have.length', 20);
-  });
+});
 
+describe('Chatting', () => {
   it('Send message and prevent XSS attack', () => {
     cy.get('#chatIcon').click();
     cy.get('.SideMessage_container__3FLL1').first().click();

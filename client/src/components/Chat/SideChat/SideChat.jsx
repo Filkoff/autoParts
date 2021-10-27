@@ -1,7 +1,7 @@
 import React from 'react';
 import SideMessage from '../SideMessage/SideMessage';
 import styles from './SideChat.module.scss';
-import PropTypes from 'prop-types';
+import { arrayOf, object } from 'prop-types';
 
 function SideChat({ chats }) {
   return (
@@ -16,7 +16,7 @@ function SideChat({ chats }) {
 }
 
 SideChat.propTypes = {
-  chats: PropTypes.arrayOf(PropTypes.object),
+  chats: arrayOf(object),
 };
 
 export default SideChat;

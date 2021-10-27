@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import PropTypes from 'prop-types';
+import { string } from 'prop-types';
 import styles from './SinglePart.module.scss';
 
 export default function SinglePart({
@@ -40,9 +40,9 @@ export default function SinglePart({
 }
 
 SinglePart.propTypes = {
-  id: PropTypes.string,
-  category: PropTypes.string,
-  name: PropTypes.string,
-  description: PropTypes.string,
-  models: PropTypes.string,
+  id: string,
+  category: string,
+  name: string,
+  description: string,
+  models: string,
 };

@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import shortid from 'shortid';
 import { setTempCustomerOrder } from '../../../reducers/customerReducer';
 import styles from './CartDealer.module.scss';
-import PropTypes from 'prop-types';
+import { string } from 'prop-types';
 import CartItem from '../Cartitem/CartItem';
 
 function CartDealer({ dealer }) {
@@ -45,7 +45,7 @@ function CartDealer({ dealer }) {
 }
 
 CartDealer.propTypes = {
-  dealer: PropTypes.string,
+  dealer: string,
 };
 
 export default CartDealer;

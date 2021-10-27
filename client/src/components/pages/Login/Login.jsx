@@ -11,14 +11,14 @@ import { NavLink, useHistory } from 'react-router-dom';
 import { login } from '../../../actions/user';
 import styles from './Login.module.scss';
 import { useTranslation } from 'react-i18next';
-import useValidation from '../../../utils/useValidation';
+import useEmailValidation from '../../../customHooks/useEmailValidation';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const [isEmailCorrect, errorText] = useValidation(email);
+  const [isEmailCorrect, errorText] = useEmailValidation(email);
   const [isInputChanged, setIsInputChanged] = useState(false);
   const router = useHistory();
   const handleBlur = () => {

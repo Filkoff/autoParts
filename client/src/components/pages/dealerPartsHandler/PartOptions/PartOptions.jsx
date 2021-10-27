@@ -3,7 +3,7 @@ import { Button, Input, NativeSelect } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import PropTypes from 'prop-types';
+import { string, func } from 'prop-types';
 import styles from './PartOptions.module.scss';
 
 function PartOptions({ newId, setPart }) {
@@ -125,8 +125,8 @@ function PartOptions({ newId, setPart }) {
 }
 
 PartOptions.propTypes = {
-  newId: PropTypes.string,
-  setPart: PropTypes.func,
+  newId: string,
+  setPart: func,
 };
 
 export default PartOptions;

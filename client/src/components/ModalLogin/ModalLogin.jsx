@@ -3,7 +3,7 @@ import { Button } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 import styles from './ModalLogin.module.scss';
 import { useTranslation } from 'react-i18next';
-import PropTypes from 'prop-types';
+import { func } from 'prop-types';
 
 function ModalLogin({ setIsModalShown }) {
   const { t } = useTranslation();
@@ -37,7 +37,7 @@ function ModalLogin({ setIsModalShown }) {
 }
 
 ModalLogin.propTypes = {
-  setIsModalShown: PropTypes.func,
+  setIsModalShown: func,
 };
 
 export default ModalLogin;

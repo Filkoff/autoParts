@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { setComparedParts } from '../../../reducers/compareReducer';
 import styles from './ComparePart.module.scss';
 import { useTranslation } from 'react-i18next';
-import PropTypes from 'prop-types';
+import { string } from 'prop-types';
 
 function ComparePart({ id, name, models, category }) {
   const dispatch = useDispatch();
@@ -46,10 +46,10 @@ function ComparePart({ id, name, models, category }) {
 }
 
 ComparePart.propTypes = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-  models: PropTypes.string,
-  category: PropTypes.string,
+  id: string,
+  name: string,
+  models: string,
+  category: string,
 };
 
 export default ComparePart;

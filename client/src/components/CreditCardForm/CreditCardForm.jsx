@@ -3,7 +3,7 @@ import { Button, FormGroup, TextField } from '@material-ui/core';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import { useTranslation } from 'react-i18next';
-import useCreditCardForm from '../../utils/useCreditCardForm';
+import useCreditCardForm from '../../customHooks/useCreditCardForm';
 import styles from './CreditCardForm.module.scss';
 
 function CreditCardForm() {

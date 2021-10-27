@@ -2,7 +2,7 @@ import React from 'react';
 import OrderItem from '../OrderItem/OrderItem';
 import styles from './Order.module.scss';
 import { useTranslation } from 'react-i18next';
-import PropTypes from 'prop-types';
+import { shape, arrayOf, string, number, element } from 'prop-types';
 
 function Order({ order, children }) {
   const { t } = useTranslation();
@@ -37,15 +37,15 @@ function Order({ order, children }) {
 }
 
 Order.propTypes = {
-  order: PropTypes.shape({
-    orderId: PropTypes.string,
-    date: PropTypes.string,
-    address: PropTypes.string,
-    paymentType: PropTypes.string,
-    total: PropTypes.number,
-    orders: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string })),
+  order: shape({
+    orderId: string,
+    date: string,
+    address: string,
+    paymentType: string,
+    total: number,
+    orders: arrayOf(shape({ id: string })),
   }),
-  children: PropTypes.arrayOf(PropTypes.element),
+  children: arrayOf(element),
 };
 
 export default Order;

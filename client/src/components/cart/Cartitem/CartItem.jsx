@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { minusItem, plusItem, removeItem } from '../../../reducers/cartReducer';
 import CloseIcon from '@material-ui/icons/Close';
-import PropTypes from 'prop-types';
+import { shape, string, number } from 'prop-types';
 import styles from './CartItem.module.scss';
 
 function CartItem({ part }) {
@@ -68,15 +68,15 @@ function CartItem({ part }) {
 }
 
 CartItem.propTypes = {
-  part: PropTypes.shape({
-    id: PropTypes.string,
-    category: PropTypes.string,
-    name: PropTypes.string,
-    description: PropTypes.string,
-    price: PropTypes.number,
-    condition: PropTypes.string,
-    amount: PropTypes.number,
-    img: PropTypes.string,
+  part: shape({
+    id: string,
+    category: string,
+    name: string,
+    description: string,
+    price: number,
+    condition: string,
+    amount: number,
+    img: string,
   }),
 };
 

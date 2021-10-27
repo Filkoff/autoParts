@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 import { addItem } from '../../../reducers/cartReducer';
 import { setChoosenDealer } from '../../../reducers/dealerReducer';
 import ModalLogin from '../../ModalLogin/ModalLogin';
-import PropTypes from 'prop-types';
+import { string, shape, number, element } from 'prop-types';
 import styles from './Part.module.scss';
 
 export default function Part({
@@ -107,21 +107,21 @@ export default function Part({
 }
 
 Part.propTypes = {
-  id: PropTypes.string,
-  category: PropTypes.string,
-  name: PropTypes.string,
-  description: PropTypes.string,
-  models: PropTypes.string,
-  price: PropTypes.number,
-  condition: PropTypes.string,
-  img: PropTypes.string,
-  dealer: PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string,
-    coords: PropTypes.shape({
-      latitude: PropTypes.number,
-      longitude: PropTypes.number,
+  id: string,
+  category: string,
+  name: string,
+  description: string,
+  models: string,
+  price: number,
+  condition: string,
+  img: string,
+  dealer: shape({
+    id: number,
+    name: string,
+    coords: shape({
+      latitude: number,
+      longitude: number,
     }),
   }),
-  children: PropTypes.element,
+  children: element,
 };

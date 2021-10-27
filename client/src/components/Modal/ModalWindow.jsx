@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { bool, func, node } from 'prop-types';
 import styles from './ModalWindow.module.scss';
 
 function ModalWindow({ show, setShow, children }) {
@@ -19,9 +19,9 @@ function ModalWindow({ show, setShow, children }) {
 }
 
 ModalWindow.propTypes = {
-  show: PropTypes.bool,
-  setShow: PropTypes.func,
-  children: PropTypes.node,
+  show: bool,
+  setShow: func,
+  children: node,
 };
 
 export default ModalWindow;

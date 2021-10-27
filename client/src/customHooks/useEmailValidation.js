@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const useValidation = (value) => {
+const useEmailValidation = (value) => {
   const [isEmailCorrect, setisEmailCorrect] = useState(true);
   const [errorText, setErrorText] = useState('');
   const { t } = useTranslation();
@@ -25,4 +25,4 @@ const useValidation = (value) => {
   return [isEmailCorrect, errorText];
 };
 
-export default useValidation;
+export default useEmailValidation;

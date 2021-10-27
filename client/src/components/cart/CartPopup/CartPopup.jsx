@@ -3,7 +3,7 @@ import { Button } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import PropTypes from 'prop-types';
+import { bool, func } from 'prop-types';
 import styles from './CartPopup.module.scss';
 
 function CartPopup({ showPopup, setShowPopup }) {
@@ -65,8 +65,8 @@ function CartPopup({ showPopup, setShowPopup }) {
 }
 
 CartPopup.propTypes = {
-  showPopup: PropTypes.bool,
-  setShowPopup: PropTypes.func,
+  showPopup: bool,
+  setShowPopup: func,
 };
 
 export default CartPopup;
