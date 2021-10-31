@@ -12,6 +12,7 @@ module.exports = {
           console.error(err);
           return;
         }
+
         try {
           const customer = JSON.parse(jsonString);
           res.status(200).send(customer);
@@ -33,6 +34,7 @@ module.exports = {
           console.error(err);
           return;
         }
+
         try {
           const parts = JSON.parse(jsonString);
           const partsWithDist = parts.map((item) => {

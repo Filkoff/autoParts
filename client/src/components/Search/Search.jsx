@@ -13,7 +13,7 @@ import { NavLink } from 'react-router-dom';
 import { getAllParts } from '../../actions/data';
 import { searchParts } from '../../actions/search';
 import styles from './Search.module.scss';
-import { CATEGORIES } from '../../consts/partsCatrgories';
+import { CATEGORIES } from '../../consts/index';
 import { useTranslation } from 'react-i18next';
 
 function Search() {
@@ -64,59 +64,57 @@ function Search() {
     </NavLink>
   );
 
-  const searchForm = (value) => (
-    <>
-      <div className={styles.searchField}>
-        <div className={styles.singleSearch}>
-          <div className={styles.label}>{t('category')}:</div>
-          <NativeSelect
-            id="category"
-            onChange={(e) =>
-              setSearchData({ ...searchData, category: e.target.value })
-            }
-            value={searchData.category}
-            className={styles.input1}
-          >
-            <option value=""></option>
-            {CATEGORIES.map((item, index) => {
-              return (
-                <option key={index} value={`${item}`}>
-                  {item}
-                </option>
-              );
-            })}
-          </NativeSelect>
-        </div>
-        <div className={styles.singleSearch}>
-          <div className={styles.label}>{t('model')}:</div>
-          <TextField
-            id="model"
-            className={styles.input}
-            variant="outlined"
-            value={searchData.model}
-            type="text"
-            onChange={(e) =>
-              setSearchData({ ...searchData, model: e.target.value })
-            }
-          />
-        </div>
-        <div className={styles.singleSearch}>
-          <div className={styles.label}>{t('partName')}:</div>
-          <TextField
-            className={styles.input}
-            variant="outlined"
-            id="name"
-            value={searchData.name}
-            type="text"
-            onChange={(e) =>
-              setSearchData({ ...searchData, name: e.target.value })
-            }
-          />
-        </div>
-        {value === 0 && searchButton}
-        {value === 1 && compareButton}
+  const searchForm = () => (
+    <div className={styles.searchField}>
+      <div className={styles.singleSearch}>
+        <div className={styles.label}>{t('category')}:</div>
+        <NativeSelect
+          id="category"
+          onChange={(e) =>
+            setSearchData({ ...searchData, category: e.target.value })
+          }
+          value={searchData.category}
+          className={styles.input1}
+        >
+          <option value=""></option>
+          {CATEGORIES.map((item) => {
+            return (
+              <option key={item} value={`${item}`}>
+                {item}
+              </option>
+            );
+          })}
+        </NativeSelect>
       </div>
-    </>
+      <div className={styles.singleSearch}>
+        <div className={styles.label}>{t('model')}:</div>
+        <TextField
+          id="model"
+          className={styles.input}
+          variant="outlined"
+          value={searchData.model}
+          type="text"
+          onChange={(e) =>
+            setSearchData({ ...searchData, model: e.target.value })
+          }
+        />
+      </div>
+      <div className={styles.singleSearch}>
+        <div className={styles.label}>{t('partName')}:</div>
+        <TextField
+          className={styles.input}
+          variant="outlined"
+          id="name"
+          value={searchData.name}
+          type="text"
+          onChange={(e) =>
+            setSearchData({ ...searchData, name: e.target.value })
+          }
+        />
+      </div>
+      {value === 0 && searchButton}
+      {value === 1 && compareButton}
+    </div>
   );
   return (
     <div className={styles.wrapper}>
@@ -134,8 +132,7 @@ function Search() {
               <Tab id="compareTab" label={t('compareParts')} />
             </Tabs>
           </Box>
-          {value === 0 && searchForm(value)}
-          {value === 1 && searchForm(value)}
+          {searchForm()}
         </Box>
       </div>
     </div>

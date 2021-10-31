@@ -14,6 +14,7 @@ module.exports = {
         req.body.password,
         client.password
       );
+
       if (isPasswordValid) {
         const token = jwt.sign(
           {
@@ -38,10 +39,14 @@ module.exports = {
             description: client.description,
           },
         });
-      } else {
+      }
+
+      if (!isPasswordValid) {
         res.status(401).send({ message: 'Неверный пароль' });
       }
-    } else {
+    }
+
+    if (!client) {
       res.status(404).send({ message: 'Пользователь с таким email не найден' });
     }
   },
@@ -49,18 +54,19 @@ module.exports = {
   async register(req, res) {
     try {
       const errors = validationResult(req);
+
       if (!errors.isEmpty()) {
         return res.status(400).json({ message: 'Uncorrect request', errors });
       }
       const client = await User.findOne({
         where: { email: req.body.email },
       });
+
       if (client) {
         res.status(404).send({ message: 'Этот email уже занят' });
       } else {
         const password = req.body.password;
         const hashPassword = await bcrypt.hash(password, 8);
-
         const user = await User.create({
           email: req.body.email,
           password: hashPassword,

@@ -7,7 +7,7 @@ import {
   setDealerParts,
 } from '../reducers/dealerReducer';
 import { getAuthToken } from '../utils/getAuthToken';
-import { BASE_URL } from '../consts/baseURL';
+import { BASE_URL } from '../consts/index';
 
 export const getAllDealerParts = () => {
   return async (dispatch) => {

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { setParts } from '../reducers/partsReducer';
-import { BASE_URL } from '../consts/baseURL';
+import { BASE_URL } from '../consts/index';
 
 export const getAllModels = async () => {
   try {

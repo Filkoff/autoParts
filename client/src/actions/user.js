@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { addAddress, setUser } from '../reducers/userReducer';
-import { BASE_URL } from '../consts/baseURL';
+import { BASE_URL } from '../consts/index';
 
 export const registration = async (name, email, password, type) => {
   try {

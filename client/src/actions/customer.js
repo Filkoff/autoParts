@@ -1,6 +1,6 @@
 import { setCustomerOrders } from '../reducers/customerReducer';
 import axios from 'axios';
-import { BASE_URL } from '../consts/baseURL';
+import { BASE_URL } from '../consts/index';
 
 export const setDeliveryData = (data) => {
   return async (dispatch) => {

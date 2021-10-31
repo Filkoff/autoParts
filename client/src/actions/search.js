@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { setResult, setSortedResult } from '../reducers/searchReducer';
-import { BASE_URL } from '../consts/baseURL';
+import { BASE_URL } from '../consts/index';
 
 export const searchParts = (category = '', model = '', name = '') => {
   return async (dispatch) => {

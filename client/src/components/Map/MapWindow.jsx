@@ -9,19 +9,19 @@ const state = store.getState();
 const currentUser = state.user.currentUser;
 
 function init() {
-  let myPlacemark,
-    myMap = new ymaps.Map(
-      'map',
-      {
-        center: [53.902662, 27.556201],
-        zoom: 12,
-      },
-      {
-        searchControlProvider: 'yandex#search',
-      }
-    );
-  const location = ymaps.geolocation;
-  location
+  let myPlacemark;
+  let myMap = new ymaps.Map(
+    'map',
+    {
+      center: [53.902662, 27.556201],
+      zoom: 12,
+    },
+    {
+      searchControlProvider: 'yandex#search',
+    }
+  );
+
+  ymaps.geolocation
     .get({
       provider: 'browser',
       mapStateAutoApply: true,

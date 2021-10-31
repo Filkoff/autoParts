@@ -19,6 +19,7 @@ module.exports = {
           console.error(err);
           return;
         }
+
         try {
           const orders = JSON.parse(jsonString);
           res.status(200).send(orders);
