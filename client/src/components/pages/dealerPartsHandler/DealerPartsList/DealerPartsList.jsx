@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import DealerPart from '../DealerPart/DealerPart';
 import styles from './DealerPartsList.module.scss';
-import { useTranslation } from 'react-i18next';
 
 const DealerPartsList = () => {
   const { t } = useTranslation();

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getAuthToken } from '../utils/getAuthToken';
 import {
   addPart,
   changePart,
@@ -6,7 +7,6 @@ import {
   setDealerOrders,
   setDealerParts,
 } from '../reducers/dealerReducer';
-import { getAuthToken } from '../utils/getAuthToken';
 import { BASE_URL } from '../consts/index';
 
 export const getAllDealerParts = () => {

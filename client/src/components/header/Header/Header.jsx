@@ -1,11 +1,11 @@
 import React from 'react';
-import 'fontsource-roboto';
-import { Toolbar, AppBar, Button, NativeSelect } from '@material-ui/core';
-import styles from './Header.module.scss';
+import { Toolbar, AppBar, Button } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import HeaderNav from '../Header-nav/HeaderNav';
+import MySelect from '../../reusable/MySelect';
+import styles from './Header.module.scss';
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -36,7 +36,7 @@ const Header = () => {
             {isAuth && <HeaderNav />}
           </div>
           <div className={styles.lang}>
-            <NativeSelect
+            {/* <NativeSelect
               value={i18n.language}
               size="small"
               variant="standard"
@@ -44,7 +44,17 @@ const Header = () => {
             >
               <option value={'ru'}>RU</option>
               <option value={'en'}>EN</option>
-            </NativeSelect>
+            </NativeSelect> */}
+            <MySelect
+              value={i18n.language}
+              size="small"
+              variant="standard"
+              onChange={changeLanguage}
+              options={[
+                { value: 'ru', name: 'RU' },
+                { value: 'en', name: 'EN' },
+              ]}
+            />
           </div>
         </Toolbar>
       </AppBar>

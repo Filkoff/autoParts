@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { addItem } from '../../../reducers/cartReducer';
 import { setChoosenDealer } from '../../../reducers/dealerReducer';
-import ModalLogin from '../../ModalLogin/ModalLogin';
 import { string, shape, number, element } from 'prop-types';
+import ModalLogin from '../../ModalLogin/ModalLogin';
 import styles from './Part.module.scss';
 
 export default function Part({

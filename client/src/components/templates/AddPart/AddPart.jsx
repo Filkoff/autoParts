@@ -3,9 +3,9 @@ import { Button, Input, NativeSelect } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import styles from './AddPart.module.scss';
-import { addNewPart } from '../../../actions/dealer';
 import shortid from 'shortid';
+import { addNewPart } from '../../../actions/dealer';
+import styles from './AddPart.module.scss';
 
 function AddPart() {
   const dispatch = useDispatch();

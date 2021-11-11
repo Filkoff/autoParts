@@ -1,7 +1,7 @@
 import React from 'react';
+import { arrayOf, object } from 'prop-types';
 import SideMessage from '../SideMessage/SideMessage';
 import styles from './SideChat.module.scss';
-import { arrayOf, object } from 'prop-types';
 
 function SideChat({ chats }) {
   return (

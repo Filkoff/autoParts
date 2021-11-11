@@ -1,7 +1,8 @@
 import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { privateRoutes, publicRoutes } from './routes';
-import { Switch, Route, Redirect } from 'react-router-dom';
+
 function AppRouter() {
   const isAuth = useSelector((state) => state.user.isAuth);
   return isAuth ? (

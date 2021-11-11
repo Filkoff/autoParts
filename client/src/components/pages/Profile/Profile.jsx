@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { Box, Link, Tab, Tabs } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
-import styles from './Profile.module.scss';
-import { customerOrders } from '../../../actions/customer';
 import { useTranslation } from 'react-i18next';
+import { useHistory, useParams } from 'react-router';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 import DealerPartsList from '../dealerPartsHandler/DealerPartsList/DealerPartsList';
 import PartsSet from '../../templates/PartsSet/PartsSet';
 import DealerOrderList from '../../orderList/DealerOrderList/DealerOrderList';
 import CustomerOrderList from '../../orderList/CustomerOrderList/CustomerOrderList';
+import { customerOrders } from '../../../actions/customer';
 import { dealerOrders, getAllDealerParts } from '../../../actions/dealer';
-import { useHistory, useParams } from 'react-router';
-import ProfileInfo from './ProfileInfo/ProfileInfo';
+import styles from './Profile.module.scss';
 
 function Profile() {
   const history = useHistory();

@@ -1,10 +1,10 @@
 import React from 'react';
-import 'fontsource-roboto';
-import styles from './MainPage.module.scss';
-import Header from '../../header/Header/Header';
-import Search from '../../Search/Search';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import Header from '../../header/Header/Header';
+import Search from '../../Search/Search';
+import 'fontsource-roboto';
+import styles from './MainPage.module.scss';
 
 const MainPage = () => {
   const { t } = useTranslation();

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { setComparedParts } from '../../../reducers/compareReducer';
-import styles from './ComparePart.module.scss';
 import { useTranslation } from 'react-i18next';
 import { string } from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { Button } from '@material-ui/core';
+import { setComparedParts } from '../../../reducers/compareReducer';
+import styles from './ComparePart.module.scss';
 
 function ComparePart({ id, name, models, category }) {
   const dispatch = useDispatch();

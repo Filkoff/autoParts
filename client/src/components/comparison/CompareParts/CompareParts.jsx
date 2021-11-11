@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import ComparePart from '../ComparePart/ComparePart';
 import styles from './CompareParts.module.scss';
-import { useTranslation } from 'react-i18next';
 
 function CompareParts() {
   const parts = useSelector((state) => state.parts.result);

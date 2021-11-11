@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { store } from './reducers';
 import { Provider } from 'react-redux';
 import './i18n';
+import App from './App';
+import { store } from './reducers';
+import './index.css';
 
 ReactDOM.render(
   <Provider store={store}>

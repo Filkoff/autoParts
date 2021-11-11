@@ -1,6 +1,6 @@
 import React from 'react';
-import { changeDealerPart } from '../../../../actions/dealer';
 import PartOptions from '../PartOptions/PartOptions';
+import { changeDealerPart } from '../../../../actions/dealer';
 
 const ChangeDealerPart = () => {
   return <PartOptions setPart={changeDealerPart} />;

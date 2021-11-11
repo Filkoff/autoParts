@@ -8,11 +8,11 @@ import {
   NativeSelect,
   InputLabel,
 } from '@material-ui/core';
-import { registration } from '../../../actions/user';
 import { NavLink, useHistory } from 'react-router-dom';
-import styles from './Registration.module.scss';
 import { useTranslation } from 'react-i18next';
+import { registration } from '../../../actions/user';
 import useEmailValidation from '../../../customHooks/useEmailValidation';
+import styles from './Registration.module.scss';
 
 const Registration = () => {
   const [email, setEmail] = useState('');

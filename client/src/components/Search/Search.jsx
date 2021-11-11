@@ -7,14 +7,14 @@ import {
   Tabs,
   TextField,
 } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getAllParts } from '../../actions/data';
 import { searchParts } from '../../actions/search';
-import styles from './Search.module.scss';
 import { CATEGORIES } from '../../consts/index';
-import { useTranslation } from 'react-i18next';
+import styles from './Search.module.scss';
 
 function Search() {
   const [searchData, setSearchData] = useState({

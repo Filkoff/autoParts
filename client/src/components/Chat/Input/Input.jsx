@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import DOMPurify from 'dompurify';
 import { Button, TextField } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import SendIcon from '@material-ui/icons/Send';
 import { addMessage } from '../../../reducers/chatReducer';
-import DOMPurify from 'dompurify';
 import styles from './Input.module.scss';
 
 function Input() {

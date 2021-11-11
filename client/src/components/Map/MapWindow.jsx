@@ -1,9 +1,9 @@
 /* global ymaps */
 import React, { useState } from 'react';
+import i18next from 'i18next';
 import { setAddress } from '../../actions/user';
 import { store } from '../../reducers/index';
 import styles from './MapWindow.module.scss';
-import i18next from 'i18next';
 
 const state = store.getState();
 const currentUser = state.user.currentUser;

@@ -3,10 +3,10 @@ import { Button } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import Part from '../Part/Part';
-import styles from './PartsList.module.scss';
 import haversine from 'haversine-distance';
+import Part from '../Part/Part';
 import { setSortedResult } from '../../../reducers/searchReducer';
+import styles from './PartsList.module.scss';
 
 export default function PartsList() {
   const dispatch = useDispatch();

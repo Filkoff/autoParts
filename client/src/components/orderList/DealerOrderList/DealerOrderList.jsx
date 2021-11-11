@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-
 import Order from '../Order/Order';
 import styles from './DealerOrderList.module.scss';
 

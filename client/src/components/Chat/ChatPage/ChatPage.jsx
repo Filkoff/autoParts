@@ -1,12 +1,12 @@
 import React from 'react';
-import MessagesContainer from '../MessagesContainer/MessagesContainer';
-import Input from '../Input/Input';
-import SideChat from '../SideChat/SideChat';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
+import MessagesContainer from '../MessagesContainer/MessagesContainer';
+import MessagesHeader from '../MessagesHeader/MessagesHeader';
+import Input from '../Input/Input';
+import SideChat from '../SideChat/SideChat';
 import { setCurrentPerson } from '../../../reducers/chatReducer';
 import styles from './ChatPage.module.scss';
-import MessagesHeader from '../MessagesHeader/MessagesHeader';
 
 function ChatPage() {
   const dispatch = useDispatch();

@@ -1,9 +1,9 @@
+import validateInfo from '../utils/validateInfo';
+import { customerOrders } from '../actions/customer';
+import { removeOrdered } from '../reducers/cartReducer';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { customerOrders } from '../actions/customer';
-import { removeOrdered } from '../reducers/cartReducer';
-import validateInfo from '../utils/validateInfo';
 
 const useCreditCardForm = () => {
   const [values, setValues] = useState({

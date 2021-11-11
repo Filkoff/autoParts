@@ -8,10 +8,10 @@ import {
   Container,
 } from '@material-ui/core';
 import { NavLink, useHistory } from 'react-router-dom';
-import { login } from '../../../actions/user';
-import styles from './Login.module.scss';
 import { useTranslation } from 'react-i18next';
+import { login } from '../../../actions/user';
 import useEmailValidation from '../../../customHooks/useEmailValidation';
+import styles from './Login.module.scss';
 
 function Login() {
   const [email, setEmail] = useState('');

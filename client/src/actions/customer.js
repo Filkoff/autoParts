@@ -1,5 +1,5 @@
-import { setCustomerOrders } from '../reducers/customerReducer';
 import axios from 'axios';
+import { setCustomerOrders } from '../reducers/customerReducer';
 import { BASE_URL } from '../consts/index';
 
 export const setDeliveryData = (data) => {

@@ -2,9 +2,9 @@ import React from 'react';
 import { Button } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { minusItem, plusItem, removeItem } from '../../../reducers/cartReducer';
-import CloseIcon from '@material-ui/icons/Close';
 import { shape, string, number } from 'prop-types';
+import CloseIcon from '@material-ui/icons/Close';
+import { minusItem, plusItem, removeItem } from '../../../reducers/cartReducer';
 import styles from './CartItem.module.scss';
 
 function CartItem({ part }) {

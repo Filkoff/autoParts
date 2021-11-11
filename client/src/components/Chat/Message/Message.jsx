@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import DOMPurify from 'dompurify';
-import { urlChecker } from '../../../utils/urlChecker';
 import { arrayOf, string } from 'prop-types';
+import { urlChecker } from '../../../utils/urlChecker';
 import styles from './Message.module.scss';
 
 function Message({ message }) {

@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import { Button, TextField } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import avatarLogo from '../../../../assets/img/avatar.jpg';
-import { API_URL } from '../../../../config';
 import CreateIcon from '@material-ui/icons/Create';
-import styles from './ProfileInfo.module.scss';
 import MapWindow from '../../../Map/MapWindow';
 import LocationModal from '../../../Modal/ModalWindow';
 import {
@@ -14,6 +11,9 @@ import {
   deleteAvatar,
   uploadAvatar,
 } from '../../../../actions/user';
+import avatarLogo from '../../../../assets/img/avatar.jpg';
+import { API_URL } from '../../../../config';
+import styles from './ProfileInfo.module.scss';
 
 function ProfileInfo() {
   const dispatch = useDispatch();

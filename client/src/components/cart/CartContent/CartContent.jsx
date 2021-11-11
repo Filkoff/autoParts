@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setSortedCart } from '../../../reducers/sortedCartReducer';
-import styles from './CartContent.module.scss';
 import shortid from 'shortid';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 import CartDealer from '../CartDealer/CartDealer';
+import { setSortedCart } from '../../../reducers/sortedCartReducer';
 import sortItems from '../../../utils/sortCartItems';
+import styles from './CartContent.module.scss';
 
 function CartContent() {
   const items = useSelector((state) => state.cart.items);

@@ -1,9 +1,9 @@
 import React from 'react';
+import shortid from 'shortid';
 import { useSelector } from 'react-redux';
+import { arrayOf, object } from 'prop-types';
 import Message from '../Message/Message';
 import styles from './MessagesContainer.module.scss';
-import shortid from 'shortid';
-import { arrayOf, object } from 'prop-types';
 
 function MessagesContainer({ chats }) {
   const current = useSelector((state) => state.chat.currentPerson);

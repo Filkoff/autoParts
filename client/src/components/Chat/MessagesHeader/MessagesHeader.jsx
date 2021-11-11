@@ -1,9 +1,13 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+// import { useSelector } from 'react-redux';
+import { current } from '../../../selectors/selectors';
+import { string } from 'prop-types';
 import styles from './MessagesHeader.module.scss';
 
-function MessagesHeader() {
-  const current = useSelector((state) => state.chat.currentPerson);
+function MessagesHeader({ name }) {
+  // const current = useSelector((state) => state.chat.currentPerson);
   const headerInfo = (
     <div className={styles.person}>
       <img
@@ -11,11 +15,20 @@ function MessagesHeader() {
         src="/assets/images/avatar.jpg"
         alt="avatar"
       />
-      <h2>{current.name}</h2>
+      <h2>{name}</h2>
     </div>
   );
 
-  return <div>{current.name ? headerInfo : null}</div>;
+  return <div>{name ? headerInfo : null}</div>;
 }
+const mapStateToProps = createStructuredSelector({
+  name: current,
+});
 
-export default MessagesHeader;
+MessagesHeader.propTypes = {
+  name: string,
+};
+
+export default connect(mapStateToProps)(MessagesHeader);
+
+// export default MessagesHeader;

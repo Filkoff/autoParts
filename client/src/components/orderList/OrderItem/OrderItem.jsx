@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './OrderItem.module.scss';
 import { useTranslation } from 'react-i18next';
 import { shape, string, number, element } from 'prop-types';
+import styles from './OrderItem.module.scss';
 
 function OrderItem({ item, children }) {
   const { t } = useTranslation();

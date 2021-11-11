@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import {
   Button,
   Checkbox,
   Container,
-  InputLabel,
   NativeSelect,
   TextField,
 } from '@material-ui/core';
-
-import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import Modal from '../Modal/ModalWindow';
 import {
   newDeliveryData,
   tempDeliveryData,
 } from '../../reducers/customerReducer';
-import styles from './OrderForm.module.scss';
-import Modal from '../Modal/ModalWindow';
 import { customerOrders } from '../../actions/customer';
 import { removeOrdered } from '../../reducers/cartReducer';
-import { useTranslation } from 'react-i18next';
+import styles from './OrderForm.module.scss';
 
 function OrderForm() {
   const deliveryData = useSelector((state) => state.customer.deliveryData);
@@ -37,29 +35,9 @@ function OrderForm() {
   const currentUser = useSelector((state) => state.user.currentUser);
   const handleSubmit = (event) => {
     if (deliveryDataList.saveData) {
-      dispatch(
-        newDeliveryData({
-          name: deliveryDataList.name,
-          surname: deliveryDataList.surname,
-          address: deliveryDataList.address,
-          phone: deliveryDataList.phone,
-          time: deliveryDataList.time,
-          savedata: deliveryDataList.saveData,
-        })
-      );
+      dispatch(newDeliveryData(deliveryDataList));
     }
-
-    dispatch(
-      tempDeliveryData({
-        name: deliveryDataList.name,
-        surname: deliveryDataList.surname,
-        address: deliveryDataList.address,
-        phone: deliveryDataList.phone,
-        time: deliveryDataList.time,
-        savedata: deliveryDataList.saveData,
-      })
-    );
-
+    dispatch(tempDeliveryData(deliveryDataList));
     event.preventDefault();
     setIsVisible(true);
   };
@@ -130,7 +108,10 @@ function OrderForm() {
                       className={styles.input}
                       label={t('phone')}
                       name="phone"
-                      pattern="+[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                      inputProps={{
+                        inputMode: 'numeric',
+                        pattern: '\\+[0-9-]*',
+                      }}
                       value={deliveryDataList.phone}
                       helperText={`${t('format')}: +375-29-111-11-11`}
                       onChange={(e) =>
@@ -143,24 +124,23 @@ function OrderForm() {
                     />
                   </div>
                   <div className={styles.inputContainer}>
-                    <InputLabel className={styles.input}>
-                      {t('deliveryTime')}:
-                      <NativeSelect
-                        id="timeSelect"
-                        name="time"
-                        value={deliveryDataList.time}
-                        onChange={(e) =>
-                          setDeliveryDataList({
-                            ...deliveryDataList,
-                            time: e.target.value,
-                          })
-                        }
-                      >
-                        <option value=""></option>
-                        <option value="10:00-15:00">10:00-15:00</option>
-                        <option value="18:00-20:00">18:00-20:00</option>
-                      </NativeSelect>
-                    </InputLabel>
+                    <NativeSelect
+                      id="timeSelect"
+                      name="time"
+                      value={deliveryDataList.time}
+                      onChange={(e) =>
+                        setDeliveryDataList({
+                          ...deliveryDataList,
+                          time: e.target.value,
+                        })
+                      }
+                    >
+                      <option value="" disabled>
+                        {t('deliveryTime')}:
+                      </option>
+                      <option value="10:00-15:00">10:00-15:00</option>
+                      <option value="18:00-20:00">18:00-20:00</option>
+                    </NativeSelect>
                   </div>
                   <div className={styles.saveCheck}>
                     <label>

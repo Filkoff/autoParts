@@ -1,13 +1,13 @@
 import React from 'react';
+import shortid from 'shortid';
+import { useTranslation } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import shortid from 'shortid';
-import { setTempCustomerOrder } from '../../../reducers/customerReducer';
-import styles from './CartDealer.module.scss';
 import { string } from 'prop-types';
 import CartItem from '../Cartitem/CartItem';
+import { setTempCustomerOrder } from '../../../reducers/customerReducer';
+import styles from './CartDealer.module.scss';
 
 function CartDealer({ dealer }) {
   let sortedItems = useSelector((state) => state.sortedCart.items);

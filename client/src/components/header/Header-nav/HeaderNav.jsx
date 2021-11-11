@@ -1,15 +1,15 @@
 import React from 'react';
-import styles from './HeaderNav.module.scss';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 import { Button } from '@material-ui/core';
-import avatarLogo from '../../../assets/img/avatar.jpg';
-import { logout } from '../../../reducers/userReducer';
 import CartIcon from '../CartIcon/CartIcon';
 import CommentIcon from '@material-ui/icons/Comment';
 import { clearCurrentPerson } from '../../../reducers/chatReducer';
 import { avatarUrl } from '../../../utils/avatarUrlCreator';
+import { logout } from '../../../reducers/userReducer';
+import avatarLogo from '../../../assets/img/avatar.jpg';
+import styles from './HeaderNav.module.scss';
 
 const HeaderNav = () => {
   const { t } = useTranslation();

@@ -1,7 +1,7 @@
+import thunk from 'redux-thunk';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import userReducer from './userReducer';
-import thunk from 'redux-thunk';
 import searchReducer from './searchReducer';
 import dealerReducer from './dealerReducer';
 import partsReducer from './partsReducer';

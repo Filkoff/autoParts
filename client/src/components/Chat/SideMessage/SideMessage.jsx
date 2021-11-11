@@ -1,8 +1,8 @@
 import React from 'react';
+import { shape, arrayOf, number, string } from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { setCurrentPerson } from '../../../reducers/chatReducer';
-import { shape, arrayOf, number, string } from 'prop-types';
 import styles from './SideMessage.module.scss';
 
 function SideMessage({ message }) {

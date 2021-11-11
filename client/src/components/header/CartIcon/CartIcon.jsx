@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Cart from '@material-ui/icons/ShoppingCart';
-import styles from './CartIcon.module.scss';
 import { useSelector } from 'react-redux';
+import Cart from '@material-ui/icons/ShoppingCart';
 import CartPopup from '../../cart/CartPopup/CartPopup';
+import styles from './CartIcon.module.scss';
 
 function CartIcon() {
   const parts = useSelector((state) => state.cart.items);

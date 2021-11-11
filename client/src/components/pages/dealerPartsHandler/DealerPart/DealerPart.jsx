@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { deleteDealerPart } from '../../../../actions/dealer';
-import styles from './DealerPart.module.scss';
 import { useTranslation } from 'react-i18next';
 import { string, number } from 'prop-types';
+import { Button } from '@material-ui/core';
+import { deleteDealerPart } from '../../../../actions/dealer';
+import styles from './DealerPart.module.scss';
 
 function DealerPart({
   id,

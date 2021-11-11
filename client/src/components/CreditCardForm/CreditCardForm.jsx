@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button, FormGroup, TextField } from '@material-ui/core';
-import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import { useTranslation } from 'react-i18next';
+import { Button, FormGroup, TextField } from '@material-ui/core';
+import Cards from 'react-credit-cards';
 import useCreditCardForm from '../../customHooks/useCreditCardForm';
 import styles from './CreditCardForm.module.scss';
 

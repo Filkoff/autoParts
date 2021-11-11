@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { getAllParts } from '../../../actions/data';
 import SinglePart from '../SinglePart/SinglePart';
+import { getAllParts } from '../../../actions/data';
 import styles from './PartsSet.module.scss';
 
 function PartsSet() {

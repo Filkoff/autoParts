@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from '@material-ui/core';
-import { setCurrentPerson } from '../../../reducers/chatReducer';
 import { useDispatch, useSelector } from 'react-redux';
-import styles from './DealerInfo.module.scss';
 import { useTranslation } from 'react-i18next';
 import AuthorizationModal from '../../Modal/ModalWindow';
+import { setCurrentPerson } from '../../../reducers/chatReducer';
+import styles from './DealerInfo.module.scss';
 
 function DealerInfo() {
   const currentDealer = useSelector((state) => state.dealer.choosenDealer);
