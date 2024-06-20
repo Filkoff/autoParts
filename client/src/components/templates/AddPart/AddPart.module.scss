@@ -1,0 +1,59 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
+.container {
+  margin: 0 auto 30px;
+}
+.form {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: -1px 8px 15px 0 $bg-transparent;
+}
+.heading {
+  margin-bottom: 20px;
+}
+.label {
+  margin: 10px;
+  width: 50px;
+  height: 80px;
+  cursor: pointer;
+  border: 1px solid $bg-gray;
+  padding: 10px;
+  border-radius: 5px;
+}
+.btnLoadInput {
+  display: none;
+}
+
+.input {
+  margin-bottom: 30px;
+}
+
+.image {
+  margin: 30px;
+  max-width: 200px;
+  max-width: 200px;
+}
+button.button {
+  margin: 20px;
+}
+.info {
+  margin: 20px;
+  text-align: left;
+}
+.description {
+  width: 100%;
+  word-break: break-word;
+}
+@media (max-width: $sm) {
+  .image {
+    max-width: 150px;
+    max-width: 150px;
+    margin: 20px;
+  }
+  .form {
+    max-width: 300px;
+    padding: 10px;
+  }
+}

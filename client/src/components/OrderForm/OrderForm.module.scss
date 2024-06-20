@@ -1,0 +1,45 @@
+@import '../../styles/colors';
+@import '../../styles/breakpoints';
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.inputContainer {
+  margin: 15px;
+}
+.input {
+  margin: 10px;
+  width: 90%;
+}
+.header {
+  margin: 20px;
+}
+button.button {
+  margin: 30px;
+}
+.formContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.formDiv {
+  width: 400px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: -1px 8px 15px 0 $bg-transparent;
+  margin: 10px;
+}
+.saveCheck {
+  margin: 20px;
+}
+@media (max-width: $sm) {
+  button.button {
+    margin: 10px;
+  }
+}

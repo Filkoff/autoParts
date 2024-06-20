@@ -1,0 +1,7 @@
+@import '../../../styles/colors';
+.container {
+  min-width: 25%;
+  border: 1px solid $border-gray;
+  border-radius: 5px;
+  overflow-y: auto;
+}

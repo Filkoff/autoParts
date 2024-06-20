@@ -1,0 +1,16 @@
+@import '../../../styles/breakpoints';
+button.button {
+  margin: 10px;
+}
+
+.flexContainer {
+  display: flex;
+  margin: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: $sm) {
+  .image {
+    max-width: 300px;
+  }
+}

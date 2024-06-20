@@ -1,0 +1,40 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
+.order {
+  border: 1px solid $bg-gray;
+  margin: 50px;
+  border-radius: 10px;
+}
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  flex-grow: 2;
+}
+.orderBlock {
+  display: flex;
+  flex-wrap: wrap;
+}
+.mainInfo {
+  background-color: blanchedalmond;
+  border-radius: 10px;
+  padding: 20px;
+}
+@media (max-width: $xl) {
+  .orderBlock {
+    display: block;
+  }
+}
+@media (max-width: $sm) {
+  .order {
+    margin: 20px 5px;
+  }
+  .items {
+    padding: 10px;
+  }
+
+  .mainInfo {
+    padding: 10px;
+  }
+}

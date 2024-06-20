@@ -1,0 +1,14 @@
+@import '../../../styles/colors';
+a {
+  color: $blue;
+}
+.container {
+  margin: 100px auto;
+}
+.image {
+  max-width: 150px;
+  margin: 30px;
+}
+button.button {
+  margin: 20px;
+}

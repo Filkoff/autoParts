@@ -1,0 +1,13 @@
+@import '../../styles/colors';
+div.container {
+  position: relative;
+  background-color: $light-gray;
+  max-width: 1920px;
+  bottom: 0;
+  padding: 5px;
+  height: 4rem;
+  font-size: 0.9rem;
+}
+.footerInfo {
+  margin: 5px;
+}

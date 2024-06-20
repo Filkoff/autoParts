@@ -1,0 +1,31 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
+.image {
+  max-width: 150px;
+  max-height: 150px;
+  margin: 10px;
+}
+
+.order {
+  border: 1px solid $bg-gray;
+  margin: 50px;
+  border-radius: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+
+.name {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+@media (max-width: $sm) {
+  .item {
+    flex-direction: column;
+  }
+}

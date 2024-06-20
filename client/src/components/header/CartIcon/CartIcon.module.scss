@@ -1,0 +1,39 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
+.iconContainer {
+  display: flex;
+  position: relative;
+  margin: 0 10px;
+}
+.cartLabel {
+  background: $red;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: $bg-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7em;
+  position: absolute;
+  left: 25px;
+  bottom: 30px;
+}
+
+.itemsAmount {
+  position: relative;
+  bottom: 2px;
+}
+
+.icon {
+  color: $black;
+}
+@media (max-width: $sm) {
+  .iconContainer {
+    margin: 5px;
+  }
+  .cartLabel {
+    left: 18px;
+    bottom: 23px;
+  }
+}

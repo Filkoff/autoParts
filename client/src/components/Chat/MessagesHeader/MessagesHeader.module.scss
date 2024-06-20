@@ -1,0 +1,18 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
+.avatar {
+  max-width: 50px;
+  border-radius: 50%;
+  margin: 10px;
+  transition: 0.3s;
+}
+.person {
+  display: flex;
+  background-color: $light-gray;
+  align-items: center;
+}
+@media (max-width: $sm) {
+  .avatar {
+    max-width: 30px;
+  }
+}

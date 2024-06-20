@@ -1,0 +1,43 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
+.headerIconsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerIcon {
+  cursor: pointer;
+}
+
+button.headerButton {
+  margin: 15px 40px 15px 15px;
+}
+.iconContainer {
+  margin: 0 10px;
+}
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+a {
+  text-decoration: none;
+}
+.commentIcon {
+  color: $black;
+}
+
+@media (max-width: $sm) {
+  .iconContainer {
+    margin: 5px;
+  }
+  .userAvatar {
+    width: 30px;
+    height: 30px;
+  }
+  button.headerButton {
+    margin-left: 5px;
+  }
+}

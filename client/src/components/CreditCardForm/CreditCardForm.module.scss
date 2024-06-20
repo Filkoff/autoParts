@@ -1,0 +1,46 @@
+@import '../../styles/colors';
+@import '../../styles/breakpoints';
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.form {
+  max-width: 300px;
+  margin: 10px;
+}
+.input {
+  margin: 20px;
+}
+
+.formContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.formDiv {
+  width: 400px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: -1px 8px 15px 0 $bg-transparent;
+}
+
+.alert {
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.creditCard {
+  margin-bottom: 10%;
+}
+@media (max-width: $sm) {
+  .formDiv {
+    padding: 30px 10px;
+    max-width: 310px;
+  }
+
+  div.creditCard {
+    max-width: 220px;
+  }
+}

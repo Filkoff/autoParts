@@ -1,0 +1,19 @@
+@import '../../../styles/colors';
+.card {
+  border: 1px solid $bg-gray;
+  border-radius: 5px;
+  width: 300px;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+button.button {
+  margin: 20px;
+}
+.name {
+  font-weight: 700;
+  text-transform: uppercase;
+}

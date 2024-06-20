@@ -1,0 +1,23 @@
+@import '../../../styles/colors';
+.image {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.dealer {
+  border-top: 1px solid $border-gray;
+  border-bottom: 1px solid $border-gray;
+  background-color: $bg-white;
+  max-width: 1140px;
+  margin: 10px auto;
+}
+.dealerName {
+  text-align: left;
+  margin-left: 20px;
+}
+.orderButtonContainer {
+  margin: 10px;
+}
+button.orderButton {
+  margin: 10px;
+}

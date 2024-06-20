@@ -1,0 +1,34 @@
+@import '../../styles/colors';
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: $bg-transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.content {
+  padding: 20px;
+  margin: 10px;
+  border-radius: 12px;
+  background-color: $bg-white;
+  width: 50vh;
+  transform: scale(0.5);
+  transition: 0.4s all;
+}
+.content.active {
+  transform: scale(1);
+}

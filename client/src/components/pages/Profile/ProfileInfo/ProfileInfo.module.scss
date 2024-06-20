@@ -1,0 +1,79 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/breakpoints';
+.avatar {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+button.button {
+  margin: 20px;
+}
+.btnLoad {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 200px;
+}
+.btnLoadInput {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.userInfo {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 500px;
+  text-align: left;
+  word-break: break-word;
+  padding: 20px;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.infoContainer {
+  margin: 0 auto;
+}
+.personalInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.userInfoContainer {
+  margin-bottom: 20px;
+  background-color: $light-gray;
+}
+.heading {
+  margin-bottom: 20px;
+}
+.descriptionInfo,
+.nameInfo {
+  width: 100%;
+}
+.createIcon {
+  cursor: pointer;
+}
+@media (max-width: $sm) {
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+  .userInfoContainer {
+    max-width: 200px;
+  }
+  .userInfo {
+    padding: 0px;
+  }
+}

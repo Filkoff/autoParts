@@ -1,0 +1,75 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
+.container {
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  position: fixed;
+  cursor: auto;
+}
+
+.popupContainer {
+  overflow-y: auto;
+  max-height: 500px;
+}
+.popup {
+  position: absolute;
+  top: 60px;
+  right: 15%;
+  padding: 30px 20px 20px;
+  height: fit-content;
+  min-width: 400px;
+  box-shadow: 1px 4px 8px $bg-transparent;
+  background-color: $bg-white;
+  border-radius: 5px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid $border-gray;
+  margin: 10px;
+  padding: 10px;
+  min-height: 100px;
+  background-color: $bg-white;
+}
+
+.image {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 20px;
+}
+
+.dealer {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid $bg-gray;
+  border-radius: 10px;
+}
+
+.info {
+  flex-basis: 300px;
+  font-weight: 600;
+}
+.infoBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+.name {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+@media (max-width: $sm) {
+  .popup {
+    min-width: 200px;
+    padding: 5px;
+  }
+  .image {
+    max-width: 60px;
+    max-height: 60px;
+  }
+}

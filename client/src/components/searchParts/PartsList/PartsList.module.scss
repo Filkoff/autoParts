@@ -1,0 +1,21 @@
+@import '../../../styles/breakpoints';
+
+.partsField {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.container {
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+button.button {
+  margin: 50px 30px;
+}
+@media (max-width: $sm) {
+  button.button {
+    margin: 10px;
+  }
+}

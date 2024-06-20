@@ -1,0 +1,49 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
+.container {
+  max-width: 1200px;
+  margin: 0 auto 50px;
+}
+
+.row {
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.dealer {
+  border-radius: 10px;
+}
+.tableHeader {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  height: 50px;
+}
+.ceil {
+  flex-basis: 300px;
+}
+
+.cartHeader {
+  margin-bottom: 20px;
+}
+.table {
+  background-color: $light-gray;
+  border-radius: 10px;
+}
+
+.tableTotal {
+  padding: 10px;
+}
+
+@media (max-width: $md) {
+  .tableHeader {
+    display: none;
+  }
+}

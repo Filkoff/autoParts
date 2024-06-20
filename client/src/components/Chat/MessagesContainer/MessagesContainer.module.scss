@@ -1,0 +1,41 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
+.container {
+  margin: 0 30px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+.messagesContainer {
+  overflow-y: auto;
+}
+.avatar {
+  max-width: 50px;
+  border-radius: 50%;
+}
+.person {
+  display: flex;
+}
+
+.messagesContainer::-webkit-scrollbar {
+  width: 3px;
+}
+
+.messagesContainer::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: $bg-gray;
+}
+
+.messagesContainer::-webkit-scrollbar-track {
+  border-radius: 2px;
+  background-color: $light-gray;
+}
+
+@media (max-width: $sm) {
+  .container {
+    margin: 0;
+  }
+}

@@ -1,0 +1,53 @@
+@import '../../styles/colors';
+@import '../../styles/breakpoints';
+.container {
+  padding: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid $light-gray;
+}
+
+.searchField {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.button {
+  top: 20px;
+}
+
+.singleSearch {
+  margin: 10px;
+  flex-basis: 400px;
+}
+
+.tabs {
+  margin-bottom: 40px;
+}
+
+.wrapper {
+  background-color: $light-gray;
+}
+.input {
+  width: 100%;
+  height: 56px;
+}
+@media (max-width: $sm) {
+  .searchField {
+    flex-direction: column;
+  }
+  .singleSearch {
+    flex-basis: auto;
+  }
+  .container {
+    padding: 10px;
+  }
+  .button {
+    top: 0;
+  }
+}

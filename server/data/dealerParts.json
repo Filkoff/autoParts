@@ -1,0 +1,395 @@
+[
+  {
+    "id": "1",
+    "category": "подвеска",
+    "name": "пружина аммортизатора",
+    "description": "Сторона утановки - задняя ось, длина - 250 мм",
+    "models": "granta, calina",
+    "img": "/assets/images/parts/coils.jpg",
+    "condition": "новая",
+    "price": 57,
+    "production": "Fenox",
+    "dealer": {
+      "id": 1,
+      "name": "Ben",
+      "coords": {
+        "latitude": 53.87161077270738,
+        "longitude": 27.50312977331383
+      }
+    }
+  },
+  {
+    "id": "2",
+    "category": "выхлопная система",
+    "name": "катализатор",
+    "description": "Масса - 2кг, длина - 370 мм",
+    "models": "vesta",
+    "img": "/assets/images/parts/cat.jpg",
+    "condition": "новая",
+    "price": 76,
+    "production": "Patron",
+    "dealer": {
+      "id": 2,
+      "name": "Bob",
+      "coords": {
+        "latitude": 53.87730109519479,
+        "longitude": 27.534157481392903
+      }
+    }
+  },
+  {
+    "id": "3",
+    "category": "подвеска",
+    "name": "передний рычаг",
+    "description": "Сторона утановки - справа",
+    "models": "granta",
+    "img": "/assets/images/parts/rychag.jpg",
+    "condition": "новая",
+    "price": 90,
+    "production": "KYB",
+    "dealer": {
+      "id": 3,
+      "name": "Ken",
+      "coords": {
+        "latitude": 53.88958139781422,
+        "longitude": 27.56283982505053
+      }
+    }
+  },
+  {
+    "id": "4",
+    "category": "подвеска",
+    "name": "задний рычаг",
+    "description": "Сторона утановки - задняя ось",
+    "models": "niva",
+    "img": "/assets/images/parts/arm-r.jpg",
+    "condition": "новая",
+    "price": 35.9,
+    "production": "Nakayama",
+    "dealer": {
+      "id": 1,
+      "name": "Ben",
+      "coords": {
+        "latitude": 53.87161077270738,
+        "longitude": 27.50312977331383
+      }
+    }
+  },
+  {
+    "id": "5",
+    "category": "система охлаждения",
+    "name": "крышка радиатора",
+    "description": "-",
+    "models": "calina, niva, granta",
+    "img": "/assets/images/parts/kryshka.jpg",
+    "condition": "новая",
+    "price": 35.9,
+    "production": "Patron",
+    "dealer": {
+      "id": 4,
+      "name": "Mark",
+      "coords": {
+        "latitude": 53.846901,
+        "longitude": 27.704115
+      }
+    }
+  },
+  {
+    "id": "6",
+    "category": "фильтры",
+    "name": "масляный фильтр",
+    "description": "Внутренний диаметр - 62мм",
+    "models": "granta, calina, vesta",
+    "img": "/assets/images/parts/oilfilter.jpg",
+    "condition": "новая",
+    "price": 35.9,
+    "production": "Patron",
+    "dealer": {
+      "id": 1,
+      "name": "Ben",
+      "coords": {
+        "latitude": 53.87161077270738,
+        "longitude": 27.50312977331383
+      }
+    }
+  },
+  {
+    "id": "7",
+    "category": "фильтры",
+    "name": "топливный фильтр",
+    "description": "Внутренний диаметр - 8мм",
+    "models": "granta, calina, niva, x-ray",
+    "img": "/assets/images/parts/fuelfilter.jpg",
+    "condition": "новая",
+    "price": 23,
+    "production": "Blueprint",
+    "dealer": {
+      "id": 5,
+      "name": "Inan",
+      "coords": {
+        "latitude": 53.871540361272345,
+        "longitude": 27.577382615251867
+      }
+    }
+  },
+  {
+    "id": "8",
+    "category": "топливная система",
+    "name": "топливный насос",
+    "description": "объем - 130л",
+    "models": "granta, calina, 2109, x-ray",
+    "img": "/assets/images/parts/fuelpump.jpg",
+    "condition": "новая",
+    "price": 12,
+    "production": "Stellox",
+    "dealer": {
+      "id": 6,
+      "name": "Paul",
+      "coords": {
+        "latitude": 53.89749541072101,
+        "longitude": 27.52118639131758
+      }
+    }
+  },
+  {
+    "id": "9",
+    "category": "фильтры",
+    "name": "воздушный фильтр",
+    "description": "215х215х45мм",
+    "models": "granta, calina",
+    "img": "/assets/images/parts/airfilter.jpg",
+    "condition": "новая",
+    "price": 12,
+    "production": "Filtron",
+    "dealer": {
+      "id": 1,
+      "name": "Ben",
+      "coords": {
+        "latitude": 53.87161077270738,
+        "longitude": 27.50312977331383
+      }
+    }
+  },
+  {
+    "id": "10",
+    "category": "фильтры",
+    "name": "топливный фильтр",
+    "description": "с фильтром грубой очистки",
+    "models": "granta, calina",
+    "img": "/assets/images/parts/fuelp.jpg",
+    "condition": "новая",
+    "price": 35.9,
+    "production": "BluePrint",
+    "dealer": {
+      "id": 1,
+      "name": "Ben",
+      "coords": {
+        "latitude": 53.87161077270738,
+        "longitude": 27.50312977331383
+      }
+    }
+  },
+  {
+    "id": "11",
+    "category": "тормозная система",
+    "name": "тормозной диск",
+    "description": "Сторона утановки - передний мост, диаметр - 237 мм",
+    "models": "granta, calina, vesta, niva",
+    "img": "/assets/images/parts/disk.jpg",
+    "condition": "новая",
+    "price": 45,
+    "production": "Stellox",
+    "dealer": {
+      "id": 2,
+      "name": "Bob",
+      "coords": {
+        "latitude": 53.87730109519479,
+        "longitude": 27.534157481392903
+      }
+    }
+  },
+  {
+    "id": "12",
+    "category": "подвеска",
+    "name": "пружина аммортизатора",
+    "description": "Сторона утановки - задняя ось, длина - 250 мм",
+    "models": "granta, calina",
+    "img": "/assets/images/parts/coil.jpg",
+    "condition": "новая",
+    "price": 35,
+    "production": "Patron",
+    "dealer": {
+      "id": 6,
+      "name": "Paul",
+      "coords": {
+        "latitude": 53.89749541072101,
+        "longitude": 27.52118639131758
+      }
+    }
+  },
+  {
+    "id": "13",
+    "category": "выхлопная система",
+    "name": "катализатор",
+    "description": "Масса - 2кг, длина - 370 мм",
+    "models": "vesta",
+    "img": "/assets/images/parts/cata.jpg",
+    "condition": "новая",
+    "price": 78,
+    "production": "Nakayama",
+    "dealer": {
+      "id": 1,
+      "name": "Ben",
+      "coords": {
+        "latitude": 53.87161077270738,
+        "longitude": 27.50312977331383
+      }
+    }
+  },
+  {
+    "id": "14",
+    "category": "подвеска",
+    "name": "передний рычаг",
+    "description": "Сторона утановки - слева",
+    "models": "granta",
+    "img": "/assets/images/parts/suspArm.jpg",
+    "condition": "новая",
+    "price": 79,
+    "production": "KYB",
+    "dealer": {
+      "id": 1,
+      "name": "Ben",
+      "coords": {
+        "latitude": 53.87161077270738,
+        "longitude": 27.50312977331383
+      }
+    }
+  },
+  {
+    "id": "15",
+    "category": "подвеска",
+    "name": "задний рычаг",
+    "description": "Сторона утановки - задняя ось",
+    "models": "niva",
+    "img": "/assets/images/parts/rychag2.jpg",
+    "condition": "новая",
+    "price": 76,
+    "production": "KYB",
+    "dealer": {
+      "id": 2,
+      "name": "Bob",
+      "coords": {
+        "latitude": 53.87730109519479,
+        "longitude": 27.534157481392903
+      }
+    }
+  },
+  {
+    "id": "16",
+    "category": "система охлаждения",
+    "name": "крышка радиатора",
+    "description": "-",
+    "models": "calina, niva, granta",
+    "img": "/assets/images/parts/kryshka.jpg",
+    "condition": "б/у",
+    "price": 17,
+    "production": "Opex",
+    "dealer": {
+      "id": 7,
+      "name": "Nick",
+      "coords": { "latitude": 53.88052608910606, "longitude": 27.5192693078666 }
+    }
+  },
+  {
+    "id": "17",
+    "category": "фильтры",
+    "name": "масляный фильтр",
+    "description": "Внутренний диаметр - 62мм",
+    "models": "granta, calina, vesta",
+    "img": "/assets/images/parts/oilFilter1.jpg",
+    "condition": "новая",
+    "price": 10.5,
+    "production": "Blueprint",
+    "dealer": {
+      "id": 7,
+      "name": "Nick",
+      "coords": { "latitude": 53.88052608910606, "longitude": 27.5192693078666 }
+    }
+  },
+  {
+    "id": "18",
+    "category": "фильтры",
+    "name": "топливный фильтр",
+    "description": "Внутренний диаметр - 8мм",
+    "models": "granta, calina, niva, x-ray",
+    "img": "/assets/images/parts/fuelFilter1.jpg",
+    "condition": "новая",
+    "price": 12,
+    "production": "Filtron",
+    "dealer": {
+      "id": 8,
+      "name": "Rob",
+      "coords": {
+        "latitude": 53.88414145331023,
+        "longitude": 27.540068530592617
+      }
+    }
+  },
+  {
+    "id": "19",
+    "category": "топливная система",
+    "name": "топливный насос",
+    "description": "объем - 130л",
+    "models": "granta, calina, 2109, x-ray",
+    "img": "/assets/images/parts/fuelPump1.jpg",
+    "condition": "б/у",
+    "price": 3.9,
+    "production": "nakayama",
+    "dealer": {
+      "id": 9,
+      "name": "Mosh",
+      "coords": {
+        "latitude": 53.88741166036656,
+        "longitude": 27.555239600549175
+      }
+    }
+  },
+  {
+    "id": "20",
+    "category": "фильтры",
+    "name": "воздушный фильтр",
+    "description": "215х215х45мм",
+    "models": "granta, calina",
+    "img": "/assets/images/parts/airFilter1.jpg",
+    "condition": "новая",
+    "price": 4.1,
+    "production": "Patron",
+    "dealer": {
+      "id": 10,
+      "name": "Tim",
+      "coords": {
+        "latitude": 53.85895821457229,
+        "longitude": 27.498210937339838
+      }
+    }
+  },
+  {
+    "id": "21",
+    "category": "топливная система",
+    "name": "топливный насос",
+    "description": "с фильтром грубой очистки",
+    "models": "granta, calina",
+    "img": "/assets/images/parts/fuelPumpBlock.jpg",
+    "condition": "новая",
+    "price": 7.5,
+    "production": "Blueprint",
+    "dealer": {
+      "id": 8,
+      "name": "Rob",
+      "coords": {
+        "latitude": 53.88414145331023,
+        "longitude": 27.540068530592617
+      }
+    }
+  }
+]

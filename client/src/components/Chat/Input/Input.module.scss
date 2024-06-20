@@ -1,0 +1,27 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
+.container {
+  margin: 40px;
+  transition: 0.3s;
+}
+.input {
+  background-color: $bg-white;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+.button {
+  height: 42px;
+}
+.inputContainer {
+  display: flex;
+  align-items: stretch;
+}
+@media (max-width: $sm) {
+  .button {
+    height: 37px;
+  }
+  .container {
+    margin: 10px;
+  }
+}

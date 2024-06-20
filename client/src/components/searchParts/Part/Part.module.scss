@@ -1,0 +1,35 @@
+@import '../../../styles/colors';
+@import '../../../styles/breakpoints';
+.card {
+  border: 1px solid $bg-gray;
+  border-radius: 5px;
+  width: 300px;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.name {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.image {
+  max-width: 200px;
+  max-height: 200px;
+}
+button.button {
+  margin: 20px;
+}
+@media (max-width: $sm) {
+  .card {
+    max-width: 250px;
+  }
+  .image {
+    max-width: 150px;
+    max-height: 159px;
+  }
+  .card {
+    margin: 10px;
+  }
+}
